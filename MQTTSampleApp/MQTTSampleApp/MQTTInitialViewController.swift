@@ -15,9 +15,9 @@ class MQTTInitialViewController: UIViewController {
     @IBOutlet weak var displayNameTextField: UITextField?
     @IBOutlet weak var startGameButton: UIButton?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//    }
 
 }
 

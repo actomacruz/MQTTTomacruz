@@ -13,10 +13,11 @@ import CoreData
 class MQTTAppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var mqttManager: MQTTManager?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        //mqttManager = MQTTManager.init()
         return true
     }
 
