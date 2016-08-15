@@ -1,7 +1,6 @@
 source 'git@git.corp.voyager.ph:cocoapods/specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
-project 'MQTTSampleApp/MQTTSampleApp.xcodeproj'
 use_frameworks!
 
 target 'MQTTSampleApp' do
