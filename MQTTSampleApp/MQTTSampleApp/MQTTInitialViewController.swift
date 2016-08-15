@@ -17,7 +17,6 @@ class MQTTInitialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailAdressTextField.rac_tex
     }
 
 }

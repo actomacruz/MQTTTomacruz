@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		D89954D1A6FBAE9E9748F2DD /* Pods_MQTTSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C4422EE303E3CE4D95EA3E /* Pods_MQTTSampleApp.framework */; };
-		F48D8DFC1D3627B3006A9300 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48D8DFB1D3627B3006A9300 /* AppDelegate.swift */; };
+		F48D8DFC1D3627B3006A9300 /* MQTTAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48D8DFB1D3627B3006A9300 /* MQTTAppDelegate.swift */; };
 		F48D8DFE1D3627B3006A9300 /* MQTTInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48D8DFD1D3627B3006A9300 /* MQTTInitialViewController.swift */; };
-		F48D8E011D3627B3006A9300 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F48D8DFF1D3627B3006A9300 /* Main.storyboard */; };
+		F48D8E011D3627B3006A9300 /* MQTTMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F48D8DFF1D3627B3006A9300 /* MQTTMain.storyboard */; };
 		F48D8E041D3627B3006A9300 /* MQTTSampleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F48D8E021D3627B3006A9300 /* MQTTSampleApp.xcdatamodeld */; };
 		F48D8E061D3627B3006A9300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F48D8E051D3627B3006A9300 /* Assets.xcassets */; };
 		F48D8E091D3627B3006A9300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F48D8E071D3627B3006A9300 /* LaunchScreen.storyboard */; };
 		F48D8E141D3627B3006A9300 /* MQTTSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48D8E131D3627B3006A9300 /* MQTTSampleAppTests.swift */; };
 		F4FF56511D6242F2004593A7 /* MQTTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF56501D6242F2004593A7 /* MQTTManager.swift */; };
+		F4FF56571D624488004593A7 /* MQTTConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF56561D624488004593A7 /* MQTTConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,9 +34,9 @@
 		A0C4422EE303E3CE4D95EA3E /* Pods_MQTTSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MQTTSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D102D36455F530A91115164A /* Pods-MQTTSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTTSampleApp.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MQTTSampleApp/Pods-MQTTSampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		F48D8DF81D3627B3006A9300 /* MQTTSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MQTTSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F48D8DFB1D3627B3006A9300 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F48D8DFB1D3627B3006A9300 /* MQTTAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTAppDelegate.swift; sourceTree = "<group>"; };
 		F48D8DFD1D3627B3006A9300 /* MQTTInitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTInitialViewController.swift; sourceTree = "<group>"; };
-		F48D8E001D3627B3006A9300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F48D8E001D3627B3006A9300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MQTTMain.storyboard; sourceTree = "<group>"; };
 		F48D8E031D3627B3006A9300 /* MQTTSampleApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MQTTSampleApp.xcdatamodel; sourceTree = "<group>"; };
 		F48D8E051D3627B3006A9300 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F48D8E081D3627B3006A9300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		F48D8E131D3627B3006A9300 /* MQTTSampleAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTSampleAppTests.swift; sourceTree = "<group>"; };
 		F48D8E151D3627B3006A9300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4FF56501D6242F2004593A7 /* MQTTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTManager.swift; sourceTree = "<group>"; };
+		F4FF56561D624488004593A7 /* MQTTConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +107,8 @@
 		F48D8DFA1D3627B3006A9300 /* MQTTSampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				F48D8DFB1D3627B3006A9300 /* AppDelegate.swift */,
+				F48D8DFB1D3627B3006A9300 /* MQTTAppDelegate.swift */,
+				F4FF56551D624455004593A7 /* Constants */,
 				F4FF56521D624310004593A7 /* View Controllers */,
 				F4FF56531D624327004593A7 /* Views */,
 				F48D8E201D38ADAD006A9300 /* Utilities */,
@@ -142,7 +145,7 @@
 		F4FF56531D624327004593A7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F48D8DFF1D3627B3006A9300 /* Main.storyboard */,
+				F48D8DFF1D3627B3006A9300 /* MQTTMain.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -156,6 +159,14 @@
 				F48D8E021D3627B3006A9300 /* MQTTSampleApp.xcdatamodeld */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4FF56551D624455004593A7 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F4FF56561D624488004593A7 /* MQTTConstants.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,7 +255,7 @@
 			files = (
 				F48D8E091D3627B3006A9300 /* LaunchScreen.storyboard in Resources */,
 				F48D8E061D3627B3006A9300 /* Assets.xcassets in Resources */,
-				F48D8E011D3627B3006A9300 /* Main.storyboard in Resources */,
+				F48D8E011D3627B3006A9300 /* MQTTMain.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +323,8 @@
 			files = (
 				F48D8DFE1D3627B3006A9300 /* MQTTInitialViewController.swift in Sources */,
 				F4FF56511D6242F2004593A7 /* MQTTManager.swift in Sources */,
-				F48D8DFC1D3627B3006A9300 /* AppDelegate.swift in Sources */,
+				F48D8DFC1D3627B3006A9300 /* MQTTAppDelegate.swift in Sources */,
+				F4FF56571D624488004593A7 /* MQTTConstants.swift in Sources */,
 				F48D8E041D3627B3006A9300 /* MQTTSampleApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,12 +348,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F48D8DFF1D3627B3006A9300 /* Main.storyboard */ = {
+		F48D8DFF1D3627B3006A9300 /* MQTTMain.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F48D8E001D3627B3006A9300 /* Base */,
 			);
-			name = Main.storyboard;
+			name = MQTTMain.storyboard;
 			sourceTree = "<group>";
 		};
 		F48D8E071D3627B3006A9300 /* LaunchScreen.storyboard */ = {

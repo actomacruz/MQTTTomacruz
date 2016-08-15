@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  MQTTAppDelegate.swift
 //  MQTTSampleApp
 //
 //  Created by Arvin John Tomacruz on 13/07/2016.
@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class MQTTAppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 

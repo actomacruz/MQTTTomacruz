@@ -1,5 +1,5 @@
 //
-//  MQTTManager.swift
+//  MQTTConstants.swift
 //  MQTTSampleApp
 //
 //  Created by Arvin John Tomacruz on 16/08/2016.
@@ -7,7 +7,3 @@
 //
 
 import Foundation
-
-class MQTTManager {
-
-}
