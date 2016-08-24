@@ -1,6 +1,6 @@
 //
 //  MQTTManager.swift
-//  MQTTSampleApp
+//  MQTTCodenames
 //
 //  Created by Arvin John Tomacruz on 16/08/2016.
 //  Copyright © 2016 Voyager Innovations Inc. All rights reserved.
@@ -13,9 +13,9 @@ class MQTTManager {
 
     init () {
         let clientIdPid = "CocoaMQTT-" + String(NSProcessInfo().processIdentifier)
-        let mqtt = CocoaMQTT(clientId: clientIdPid, host: "api.brandx.dev.voyager.ph", port: 1883)
-        mqtt.username = "actomacruz"
-        mqtt.password = "Password1"
+        let mqtt = CocoaMQTT(clientId: clientIdPid, host: Broker.Host, port: UInt16(Broker.Port)!)
+        mqtt.username = Account.Username
+        mqtt.password = Account.Password
         //mqtt.willMessage = CocoaMQTTWill(topic: "/codenames", message: "welcome")
         mqtt.keepAlive = 90
         mqtt.secureMQTT = true

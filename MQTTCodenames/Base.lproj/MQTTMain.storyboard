@@ -8,7 +8,7 @@
         <!--Initial View Controller-->
         <scene sceneID="eB4-6u-a2P">
             <objects>
-                <viewController id="JqX-zd-uBq" customClass="MQTTInitialViewController" customModule="MQTTSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JqX-zd-uBq" customClass="MQTTInitialViewController" customModule="MQTTCodenames" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v5M-a7-6ZU"/>
                         <viewControllerLayoutGuide type="bottom" id="9FA-3K-9T3"/>

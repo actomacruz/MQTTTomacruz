@@ -8,15 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		B06EA89CA5DAEC902D28DC35 /* GE.plist in Sources */ = {isa = PBXBuildFile; fileRef = 0E2E770105D78F7D8D602D4D /* GE.plist */; };
-		D89954D1A6FBAE9E9748F2DD /* Pods_MQTTSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C4422EE303E3CE4D95EA3E /* Pods_MQTTSampleApp.framework */; };
+		F44AE3FD1D6DA20D00508B2F /* MQTTConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44AE3FC1D6DA20D00508B2F /* MQTTConfigurations.swift */; };
+		F452CD571D6DAB6200B167B3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F452CD561D6DAB6200B167B3 /* Default-568h@2x.png */; };
+		F457B2971D6DA85D00A2490E /* Pods_MQTTCodenames.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78A83857D84B5FD0BFBDB7B /* Pods_MQTTCodenames.framework */; };
 		F48D8DFC1D3627B3006A9300 /* MQTTAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48D8DFB1D3627B3006A9300 /* MQTTAppDelegate.swift */; };
 		F48D8DFE1D3627B3006A9300 /* MQTTInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48D8DFD1D3627B3006A9300 /* MQTTInitialViewController.swift */; };
 		F48D8E011D3627B3006A9300 /* MQTTMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F48D8DFF1D3627B3006A9300 /* MQTTMain.storyboard */; };
-		F48D8E041D3627B3006A9300 /* MQTTSampleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F48D8E021D3627B3006A9300 /* MQTTSampleApp.xcdatamodeld */; };
+		F48D8E041D3627B3006A9300 /* MQTTCodenames.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F48D8E021D3627B3006A9300 /* MQTTCodenames.xcdatamodeld */; };
 		F48D8E061D3627B3006A9300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F48D8E051D3627B3006A9300 /* Assets.xcassets */; };
 		F48D8E091D3627B3006A9300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F48D8E071D3627B3006A9300 /* LaunchScreen.storyboard */; };
-		F48D8E141D3627B3006A9300 /* MQTTSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48D8E131D3627B3006A9300 /* MQTTSampleAppTests.swift */; };
-		F4FF56511D6242F2004593A7 /* MQTTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF56501D6242F2004593A7 /* MQTTManager.swift */; };
+		F48D8E141D3627B3006A9300 /* MQTTCodenamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48D8E131D3627B3006A9300 /* MQTTCodenamesTests.swift */; };
+		F4FCB2971D6DAA6000253381 /* MQTTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCB2961D6DAA6000253381 /* MQTTManager.swift */; };
 		F4FF56571D624488004593A7 /* MQTTConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF56561D624488004593A7 /* MQTTConstants.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,23 +34,26 @@
 
 /* Begin PBXFileReference section */
 		0E2E770105D78F7D8D602D4D /* GE.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = GE.plist; path = VoyagerGE/GE.plist; sourceTree = "<group>"; };
-		1C6900979D650E9A9B76755A /* Pods-MQTTSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTTSampleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MQTTSampleApp/Pods-MQTTSampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		5735EA89B11323387D1799ED /* MQTTCodenames-GE.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "MQTTCodenames-GE.plist"; path = "VoyagerGE/MQTTCodenames-GE.plist"; sourceTree = "<group>"; };
 		94CAC7AF995D4F60303E2852 /* MQTTSampleApp-GE.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "MQTTSampleApp-GE.plist"; path = "VoyagerGE/MQTTSampleApp-GE.plist"; sourceTree = "<group>"; };
-		A0C4422EE303E3CE4D95EA3E /* Pods_MQTTSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MQTTSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7BC2B6F30826CDF62B87BA1 /* Pods-MQTTSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTTSampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MQTTSampleApp/Pods-MQTTSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
-		F48D8DF81D3627B3006A9300 /* MQTTSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MQTTSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F48D8DFB1D3627B3006A9300 /* MQTTAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTAppDelegate.swift; sourceTree = "<group>"; };
-		F48D8DFD1D3627B3006A9300 /* MQTTInitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTInitialViewController.swift; sourceTree = "<group>"; };
+		A78A83857D84B5FD0BFBDB7B /* Pods_MQTTCodenames.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MQTTCodenames.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F106257519B4EA825A817CB9 /* Pods-MQTTCodenames.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTTCodenames.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MQTTCodenames/Pods-MQTTCodenames.debug.xcconfig"; sourceTree = "<group>"; };
+		F408A99AC34B61062AA3B1EB /* Pods-MQTTCodenames.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTTCodenames.release.xcconfig"; path = "Pods/Target Support Files/Pods-MQTTCodenames/Pods-MQTTCodenames.release.xcconfig"; sourceTree = "<group>"; };
+		F44AE3FC1D6DA20D00508B2F /* MQTTConfigurations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MQTTConfigurations.swift; path = MQTTCodenames/MQTTConfigurations.swift; sourceTree = "<group>"; };
+		F452CD561D6DAB6200B167B3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		F48D8DF81D3627B3006A9300 /* MQTTCodenames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MQTTCodenames.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F48D8DFB1D3627B3006A9300 /* MQTTAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MQTTAppDelegate.swift; path = MQTTCodenames/MQTTAppDelegate.swift; sourceTree = "<group>"; };
+		F48D8DFD1D3627B3006A9300 /* MQTTInitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MQTTInitialViewController.swift; path = MQTTCodenames/MQTTInitialViewController.swift; sourceTree = "<group>"; };
 		F48D8E001D3627B3006A9300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MQTTMain.storyboard; sourceTree = "<group>"; };
-		F48D8E031D3627B3006A9300 /* MQTTSampleApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MQTTSampleApp.xcdatamodel; sourceTree = "<group>"; };
-		F48D8E051D3627B3006A9300 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F48D8E031D3627B3006A9300 /* MQTTCodenames.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MQTTCodenames.xcdatamodel; sourceTree = "<group>"; };
+		F48D8E051D3627B3006A9300 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = MQTTCodenames/Assets.xcassets; sourceTree = "<group>"; };
 		F48D8E081D3627B3006A9300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F48D8E0A1D3627B3006A9300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F48D8E0F1D3627B3006A9300 /* MQTTSampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MQTTSampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F48D8E131D3627B3006A9300 /* MQTTSampleAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTSampleAppTests.swift; sourceTree = "<group>"; };
-		F48D8E151D3627B3006A9300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4FF56501D6242F2004593A7 /* MQTTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTManager.swift; sourceTree = "<group>"; };
-		F4FF56561D624488004593A7 /* MQTTConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTConstants.swift; sourceTree = "<group>"; };
+		F48D8E0A1D3627B3006A9300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = MQTTCodenames/Info.plist; sourceTree = "<group>"; };
+		F48D8E0F1D3627B3006A9300 /* MQTTCodenames.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MQTTCodenames.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F48D8E131D3627B3006A9300 /* MQTTCodenamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MQTTCodenamesTests.swift; path = MQTTCodenamesTests/MQTTCodenamesTests.swift; sourceTree = "<group>"; };
+		F48D8E151D3627B3006A9300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = MQTTCodenamesTests/Info.plist; sourceTree = "<group>"; };
+		F4FCB2961D6DAA6000253381 /* MQTTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MQTTManager.swift; path = MQTTCodenames/MQTTManager.swift; sourceTree = SOURCE_ROOT; };
+		F4FF56561D624488004593A7 /* MQTTConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MQTTConstants.swift; path = MQTTCodenames/MQTTConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D89954D1A6FBAE9E9748F2DD /* Pods_MQTTSampleApp.framework in Frameworks */,
+				F457B2971D6DA85D00A2490E /* Pods_MQTTCodenames.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +80,7 @@
 			children = (
 				0E2E770105D78F7D8D602D4D /* GE.plist */,
 				94CAC7AF995D4F60303E2852 /* MQTTSampleApp-GE.plist */,
+				5735EA89B11323387D1799ED /* MQTTCodenames-GE.plist */,
 			);
 			name = VoyagerGE;
 			sourceTree = "<group>";
@@ -82,7 +88,7 @@
 		A084C9EF5BAF2B0DB64C08C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A0C4422EE303E3CE4D95EA3E /* Pods_MQTTSampleApp.framework */,
+				A78A83857D84B5FD0BFBDB7B /* Pods_MQTTCodenames.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -90,8 +96,8 @@
 		C1A5EB55D695F015B61234B6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A7BC2B6F30826CDF62B87BA1 /* Pods-MQTTSampleApp.debug.xcconfig */,
-				1C6900979D650E9A9B76755A /* Pods-MQTTSampleApp.release.xcconfig */,
+				F106257519B4EA825A817CB9 /* Pods-MQTTCodenames.debug.xcconfig */,
+				F408A99AC34B61062AA3B1EB /* Pods-MQTTCodenames.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -111,8 +117,8 @@
 		F48D8DF91D3627B3006A9300 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F48D8DF81D3627B3006A9300 /* MQTTSampleApp.app */,
-				F48D8E0F1D3627B3006A9300 /* MQTTSampleAppTests.xctest */,
+				F48D8DF81D3627B3006A9300 /* MQTTCodenames.app */,
+				F48D8E0F1D3627B3006A9300 /* MQTTCodenames.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,7 +139,7 @@
 		F48D8E121D3627B3006A9300 /* MQTTSampleAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				F48D8E131D3627B3006A9300 /* MQTTSampleAppTests.swift */,
+				F48D8E131D3627B3006A9300 /* MQTTCodenamesTests.swift */,
 				F48D8E151D3627B3006A9300 /* Info.plist */,
 			);
 			path = MQTTSampleAppTests;
@@ -142,7 +148,7 @@
 		F48D8E201D38ADAD006A9300 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				F4FF56501D6242F2004593A7 /* MQTTManager.swift */,
+				F4FCB2961D6DAA6000253381 /* MQTTManager.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -168,8 +174,9 @@
 			children = (
 				F48D8E051D3627B3006A9300 /* Assets.xcassets */,
 				F48D8E071D3627B3006A9300 /* LaunchScreen.storyboard */,
+				F452CD561D6DAB6200B167B3 /* Default-568h@2x.png */,
 				F48D8E0A1D3627B3006A9300 /* Info.plist */,
-				F48D8E021D3627B3006A9300 /* MQTTSampleApp.xcdatamodeld */,
+				F48D8E021D3627B3006A9300 /* MQTTCodenames.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -178,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				F4FF56561D624488004593A7 /* MQTTConstants.swift */,
+				F44AE3FC1D6DA20D00508B2F /* MQTTConfigurations.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -185,12 +193,12 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F48D8DF71D3627B3006A9300 /* MQTTSampleApp */ = {
+		F48D8DF71D3627B3006A9300 /* MQTTCodenames */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F48D8E181D3627B3006A9300 /* Build configuration list for PBXNativeTarget "MQTTSampleApp" */;
+			buildConfigurationList = F48D8E181D3627B3006A9300 /* Build configuration list for PBXNativeTarget "MQTTCodenames" */;
 			buildPhases = (
-				4AC9978312428F6EBD074A45 /* [CP] Check Pods Manifest.lock */,
 				D3C7414DF3F0C105D1E02A9B /* VoyagerGenericEncryption */,
+				4AC9978312428F6EBD074A45 /* [CP] Check Pods Manifest.lock */,
 				F48D8DF41D3627B3006A9300 /* Sources */,
 				F48D8DF51D3627B3006A9300 /* Frameworks */,
 				F48D8DF61D3627B3006A9300 /* Resources */,
@@ -201,14 +209,14 @@
 			);
 			dependencies = (
 			);
-			name = MQTTSampleApp;
+			name = MQTTCodenames;
 			productName = MQTTSampleApp;
-			productReference = F48D8DF81D3627B3006A9300 /* MQTTSampleApp.app */;
+			productReference = F48D8DF81D3627B3006A9300 /* MQTTCodenames.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F48D8E0E1D3627B3006A9300 /* MQTTSampleAppTests */ = {
+		F48D8E0E1D3627B3006A9300 /* MQTTCodenamesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F48D8E1B1D3627B3006A9300 /* Build configuration list for PBXNativeTarget "MQTTSampleAppTests" */;
+			buildConfigurationList = F48D8E1B1D3627B3006A9300 /* Build configuration list for PBXNativeTarget "MQTTCodenamesTests" */;
 			buildPhases = (
 				F48D8E0B1D3627B3006A9300 /* Sources */,
 				F48D8E0C1D3627B3006A9300 /* Frameworks */,
@@ -219,9 +227,9 @@
 			dependencies = (
 				F48D8E111D3627B3006A9300 /* PBXTargetDependency */,
 			);
-			name = MQTTSampleAppTests;
+			name = MQTTCodenamesTests;
 			productName = MQTTSampleAppTests;
-			productReference = F48D8E0F1D3627B3006A9300 /* MQTTSampleAppTests.xctest */;
+			productReference = F48D8E0F1D3627B3006A9300 /* MQTTCodenames.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -243,7 +251,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F48D8DF31D3627B3006A9300 /* Build configuration list for PBXProject "MQTTSampleApp" */;
+			buildConfigurationList = F48D8DF31D3627B3006A9300 /* Build configuration list for PBXProject "MQTTCodenames" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -256,8 +264,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F48D8DF71D3627B3006A9300 /* MQTTSampleApp */,
-				F48D8E0E1D3627B3006A9300 /* MQTTSampleAppTests */,
+				F48D8DF71D3627B3006A9300 /* MQTTCodenames */,
+				F48D8E0E1D3627B3006A9300 /* MQTTCodenamesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -268,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F48D8E091D3627B3006A9300 /* LaunchScreen.storyboard in Resources */,
+				F452CD571D6DAB6200B167B3 /* Default-568h@2x.png in Resources */,
 				F48D8E061D3627B3006A9300 /* Assets.xcassets in Resources */,
 				F48D8E011D3627B3006A9300 /* MQTTMain.storyboard in Resources */,
 			);
@@ -295,7 +304,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MQTTSampleApp/Pods-MQTTSampleApp-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MQTTCodenames/Pods-MQTTCodenames-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4AC9978312428F6EBD074A45 /* [CP] Check Pods Manifest.lock */ = {
@@ -339,7 +348,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MQTTSampleApp/Pods-MQTTSampleApp-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MQTTCodenames/Pods-MQTTCodenames-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -350,11 +359,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F48D8DFE1D3627B3006A9300 /* MQTTInitialViewController.swift in Sources */,
-				F4FF56511D6242F2004593A7 /* MQTTManager.swift in Sources */,
 				F48D8DFC1D3627B3006A9300 /* MQTTAppDelegate.swift in Sources */,
 				F4FF56571D624488004593A7 /* MQTTConstants.swift in Sources */,
-				F48D8E041D3627B3006A9300 /* MQTTSampleApp.xcdatamodeld in Sources */,
+				F48D8E041D3627B3006A9300 /* MQTTCodenames.xcdatamodeld in Sources */,
 				B06EA89CA5DAEC902D28DC35 /* GE.plist in Sources */,
+				F44AE3FD1D6DA20D00508B2F /* MQTTConfigurations.swift in Sources */,
+				F4FCB2971D6DAA6000253381 /* MQTTManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F48D8E141D3627B3006A9300 /* MQTTSampleAppTests.swift in Sources */,
+				F48D8E141D3627B3006A9300 /* MQTTCodenamesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +381,7 @@
 /* Begin PBXTargetDependency section */
 		F48D8E111D3627B3006A9300 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F48D8DF71D3627B3006A9300 /* MQTTSampleApp */;
+			target = F48D8DF71D3627B3006A9300 /* MQTTCodenames */;
 			targetProxy = F48D8E101D3627B3006A9300 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -383,6 +393,7 @@
 				F48D8E001D3627B3006A9300 /* Base */,
 			);
 			name = MQTTMain.storyboard;
+			path = MQTTCodenames;
 			sourceTree = "<group>";
 		};
 		F48D8E071D3627B3006A9300 /* LaunchScreen.storyboard */ = {
@@ -391,6 +402,7 @@
 				F48D8E081D3627B3006A9300 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = MQTTCodenames;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -481,27 +493,27 @@
 		};
 		F48D8E191D3627B3006A9300 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7BC2B6F30826CDF62B87BA1 /* Pods-MQTTSampleApp.debug.xcconfig */;
+			baseConfigurationReference = F106257519B4EA825A817CB9 /* Pods-MQTTCodenames.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = MQTTSampleApp/Info.plist;
+				INFOPLIST_FILE = MQTTCodenames/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.voyager.mqtt-tomacruz.MQTTSampleApp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.voyager.mqtt-tomacruz.codenames";
+				PRODUCT_NAME = MQTTCodenames;
 			};
 			name = Debug;
 		};
 		F48D8E1A1D3627B3006A9300 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C6900979D650E9A9B76755A /* Pods-MQTTSampleApp.release.xcconfig */;
+			baseConfigurationReference = F408A99AC34B61062AA3B1EB /* Pods-MQTTCodenames.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = MQTTSampleApp/Info.plist;
+				INFOPLIST_FILE = MQTTCodenames/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.voyager.mqtt-tomacruz.MQTTSampleApp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.voyager.mqtt-tomacruz.codenames";
+				PRODUCT_NAME = MQTTCodenames;
 			};
 			name = Release;
 		};
@@ -509,11 +521,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = MQTTSampleAppTests/Info.plist;
+				INFOPLIST_FILE = MQTTCodenamesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.voyager.mqtt-tomacruz.MQTTSampleAppTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MQTTSampleApp.app/MQTTSampleApp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.voyager.mqtt-tomacruz.codenamestests";
+				PRODUCT_NAME = MQTTCodenames;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MQTTCodenames.app/MQTTCodenames";
 			};
 			name = Debug;
 		};
@@ -521,18 +533,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = MQTTSampleAppTests/Info.plist;
+				INFOPLIST_FILE = MQTTCodenamesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.voyager.mqtt-tomacruz.MQTTSampleAppTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MQTTSampleApp.app/MQTTSampleApp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.voyager.mqtt-tomacruz.codenamestests";
+				PRODUCT_NAME = MQTTCodenames;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MQTTCodenames.app/MQTTCodenames";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F48D8DF31D3627B3006A9300 /* Build configuration list for PBXProject "MQTTSampleApp" */ = {
+		F48D8DF31D3627B3006A9300 /* Build configuration list for PBXProject "MQTTCodenames" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F48D8E161D3627B3006A9300 /* Debug */,
@@ -541,7 +553,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F48D8E181D3627B3006A9300 /* Build configuration list for PBXNativeTarget "MQTTSampleApp" */ = {
+		F48D8E181D3627B3006A9300 /* Build configuration list for PBXNativeTarget "MQTTCodenames" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F48D8E191D3627B3006A9300 /* Debug */,
@@ -550,7 +562,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F48D8E1B1D3627B3006A9300 /* Build configuration list for PBXNativeTarget "MQTTSampleAppTests" */ = {
+		F48D8E1B1D3627B3006A9300 /* Build configuration list for PBXNativeTarget "MQTTCodenamesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F48D8E1C1D3627B3006A9300 /* Debug */,
@@ -562,13 +574,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F48D8E021D3627B3006A9300 /* MQTTSampleApp.xcdatamodeld */ = {
+		F48D8E021D3627B3006A9300 /* MQTTCodenames.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F48D8E031D3627B3006A9300 /* MQTTSampleApp.xcdatamodel */,
+				F48D8E031D3627B3006A9300 /* MQTTCodenames.xcdatamodel */,
 			);
-			currentVersion = F48D8E031D3627B3006A9300 /* MQTTSampleApp.xcdatamodel */;
-			path = MQTTSampleApp.xcdatamodeld;
+			currentVersion = F48D8E031D3627B3006A9300 /* MQTTCodenames.xcdatamodel */;
+			path = MQTTCodenames.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

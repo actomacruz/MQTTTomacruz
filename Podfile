@@ -3,7 +3,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 use_frameworks!
 
-target 'MQTTSampleApp' do
+target 'MQTTCodenames' do
 
 pod 'CocoaMQTT', '1.0.7'
 pod 'ReactiveCocoa', '4.2.1'

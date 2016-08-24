@@ -1,6 +1,6 @@
 //
 //  MQTTInitialViewController.swift
-//  MQTTSampleApp
+//  MQTTCodenames
 //
 //  Created by Arvin John Tomacruz on 13/07/2016.
 //  Copyright © 2016 Voyager Innovations Inc. All rights reserved.

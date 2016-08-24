@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F48D8DF71D3627B3006A9300"
-               BuildableName = "MQTTSampleApp.app"
-               BlueprintName = "MQTTSampleApp"
-               ReferencedContainer = "container:MQTTSampleApp.xcodeproj">
+               BuildableName = "MQTTCodenames.app"
+               BlueprintName = "MQTTCodenames"
+               ReferencedContainer = "container:MQTTCodenames.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F48D8E0E1D3627B3006A9300"
-               BuildableName = "MQTTSampleAppTests.xctest"
-               BlueprintName = "MQTTSampleAppTests"
-               ReferencedContainer = "container:MQTTSampleApp.xcodeproj">
+               BuildableName = "MQTTCodenames.xctest"
+               BlueprintName = "MQTTCodenamesTests"
+               ReferencedContainer = "container:MQTTCodenames.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F48D8DF71D3627B3006A9300"
-            BuildableName = "MQTTSampleApp.app"
-            BlueprintName = "MQTTSampleApp"
-            ReferencedContainer = "container:MQTTSampleApp.xcodeproj">
+            BuildableName = "MQTTCodenames.app"
+            BlueprintName = "MQTTCodenames"
+            ReferencedContainer = "container:MQTTCodenames.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F48D8DF71D3627B3006A9300"
-            BuildableName = "MQTTSampleApp.app"
-            BlueprintName = "MQTTSampleApp"
-            ReferencedContainer = "container:MQTTSampleApp.xcodeproj">
+            BuildableName = "MQTTCodenames.app"
+            BlueprintName = "MQTTCodenames"
+            ReferencedContainer = "container:MQTTCodenames.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F48D8DF71D3627B3006A9300"
-            BuildableName = "MQTTSampleApp.app"
-            BlueprintName = "MQTTSampleApp"
-            ReferencedContainer = "container:MQTTSampleApp.xcodeproj">
+            BuildableName = "MQTTCodenames.app"
+            BlueprintName = "MQTTCodenames"
+            ReferencedContainer = "container:MQTTCodenames.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

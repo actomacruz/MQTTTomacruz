@@ -1,15 +1,15 @@
 //
-//  MQTTSampleAppTests.swift
-//  MQTTSampleAppTests
+//  MQTTCodenamesTests.swift
+//  MQTTCodenamesTests
 //
 //  Created by Arvin John Tomacruz on 13/07/2016.
 //  Copyright © 2016 Voyager Innovations Inc. All rights reserved.
 //
 
 import XCTest
-@testable import MQTTSampleApp
+@testable import MQTTCodenames
 
-class MQTTSampleAppTests: XCTestCase {
+class MQTTCodenamesTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
