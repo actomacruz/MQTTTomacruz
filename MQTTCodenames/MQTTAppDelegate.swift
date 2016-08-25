@@ -18,6 +18,7 @@ class MQTTAppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         mqttManager = MQTTManager.init()
+        mqttManager?.connect()
         return true
     }
 
