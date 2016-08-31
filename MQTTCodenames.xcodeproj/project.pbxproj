@@ -19,6 +19,7 @@
 		F43621D01D6DAF6D00003DB5 /* MQTTConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43621CE1D6DAF6D00003DB5 /* MQTTConstants.swift */; };
 		F43621D21D6DAF7800003DB5 /* MQTTInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43621D11D6DAF7800003DB5 /* MQTTInitialViewController.swift */; };
 		F43621D41D6DAFA100003DB5 /* MQTTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43621D31D6DAFA100003DB5 /* MQTTManager.swift */; };
+		F47022351D76B1DF00F1C6D0 /* MQTTInitialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47022341D76B1DF00F1C6D0 /* MQTTInitialViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		F43621CE1D6DAF6D00003DB5 /* MQTTConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTConstants.swift; sourceTree = "<group>"; };
 		F43621D11D6DAF7800003DB5 /* MQTTInitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTInitialViewController.swift; sourceTree = "<group>"; };
 		F43621D31D6DAFA100003DB5 /* MQTTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTManager.swift; sourceTree = "<group>"; };
+		F47022341D76B1DF00F1C6D0 /* MQTTInitialViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTInitialViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				F43621CB1D6DAF1300003DB5 /* MQTTAppDelegate.swift */,
 				F43621C61D6DAEC000003DB5 /* Constants */,
 				F43621C71D6DAEC900003DB5 /* View Controllers */,
+				F47022331D76B1BE00F1C6D0 /* View Models */,
 				F43621C81D6DAED300003DB5 /* Views */,
 				F43621C91D6DAED900003DB5 /* Utilities */,
 				F43621CA1D6DAEE300003DB5 /* Supporting Files */,
@@ -174,6 +177,14 @@
 				F43621AA1D6DAE3000003DB5 /* MQTTCodenames.xcdatamodeld */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F47022331D76B1BE00F1C6D0 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				F47022341D76B1DF00F1C6D0 /* MQTTInitialViewModel.swift */,
+			);
+			name = "View Models";
 			sourceTree = "<group>";
 		};
 		F60CFFFEF21AED4684C48A47 /* Pods */ = {
@@ -353,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F43621CF1D6DAF6D00003DB5 /* MQTTConfigurations.swift in Sources */,
+				F47022351D76B1DF00F1C6D0 /* MQTTInitialViewModel.swift in Sources */,
 				F43621D41D6DAFA100003DB5 /* MQTTManager.swift in Sources */,
 				F43621D01D6DAF6D00003DB5 /* MQTTConstants.swift in Sources */,
 				F43621CC1D6DAF1300003DB5 /* MQTTAppDelegate.swift in Sources */,

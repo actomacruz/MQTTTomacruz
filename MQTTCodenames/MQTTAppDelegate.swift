@@ -15,10 +15,13 @@ class MQTTAppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var mqttManager: MQTTManager?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        mqttManager = MQTTManager.init()
-        mqttManager?.connect()
+        self.mqttManager = MQTTManager.init()
+        self.mqttManager?.connect()
+        var mqttInitialViewModel = MQTTInitialViewModel()
+        mqttInitialViewModel.mqttManager = mqttManager
+        let initialViewController = self.window?.rootViewController as? MQTTInitialViewController
+        initialViewController?.viewModel = mqttInitialViewModel
         return true
     }
 

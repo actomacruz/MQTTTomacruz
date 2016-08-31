@@ -12,12 +12,13 @@ import enum Result.NoError
 
 class MQTTInitialViewController: UIViewController {
     
-    var mqttManager: MQTTManager?
+    var viewModel: MQTTInitialViewModel?
     @IBOutlet weak var createRoomButton: UIButton!
     @IBOutlet weak var joinRoomButton: UIButton!
     @IBOutlet weak var nickNameTextField: UITextField!
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         let textFieldSignal = self.nickNameTextField.rac_textSignal().toSignalProducer()
                                 .flatMapError { error in
                                     return SignalProducer<AnyObject?, NoError>.empty
@@ -27,14 +28,15 @@ class MQTTInitialViewController: UIViewController {
                                 }
         DynamicProperty(object: self.createRoomButton, keyPath: "enabled") <~ textFieldSignal
         DynamicProperty(object: self.joinRoomButton, keyPath: "enabled") <~ textFieldSignal
-        super.viewDidLoad()
     }
     
     @IBAction func didTapJoinRoom(sender: AnyObject) {
+        self.viewModel?.nickname = self.nickNameTextField.text
         print("Join")
     }
     
     @IBAction func didTapCreateRoom(sender: AnyObject) {
+        self.viewModel?.nickname = self.nickNameTextField.text
         print("Create")
     }
 
