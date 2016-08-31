@@ -18,9 +18,12 @@ class MQTTManager {
     
     var messageSignal: Signal<String, NoError>
     var messageObserver: Observer<String, NoError>
+    var subscribeSignal: Signal<Bool, NoError>
+    var subscribeObserver: Observer<Bool, NoError>
     
     init () {
         (messageSignal, messageObserver) = Signal<String, NoError>.pipe()
+        (subscribeSignal, subscribeObserver) = Signal<Bool, NoError>.pipe()
         clientIdPid = "CocoaMQTT-" + String(NSProcessInfo().processIdentifier)
         mqtt = CocoaMQTT(clientId: clientIdPid, host: Broker.Host, port: UInt16(Broker.Port)!)
         mqtt.username = Account.Username
@@ -80,10 +83,12 @@ extension MQTTManager: CocoaMQTTDelegate {
     }
     
     func mqtt(mqtt: CocoaMQTT, didSubscribeTopic topic: String) {
+        subscribeObserver.sendNext(true)
         print("didSubscribeTopic to \(topic)")
     }
     
     func mqtt(mqtt: CocoaMQTT, didUnsubscribeTopic topic: String) {
+        subscribeObserver.sendNext(false)
         print("didUnsubscribeTopic to \(topic)")
     }
     
