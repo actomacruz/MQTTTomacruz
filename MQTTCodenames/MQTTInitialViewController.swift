@@ -31,13 +31,13 @@ class MQTTInitialViewController: UIViewController {
     }
     
     @IBAction func didTapJoinRoom(sender: AnyObject) {
-        self.viewModel?.nickname = self.nickNameTextField.text
+        NSUserDefaults.standardUserDefaults().setObject(self.nickNameTextField.text, forKey: Keys.Nickname)
         print("Join")
     }
     
     @IBAction func didTapCreateRoom(sender: AnyObject) {
-        self.viewModel?.nickname = self.nickNameTextField.text
-        print("Create")
+        NSUserDefaults.standardUserDefaults().setObject(self.nickNameTextField.text, forKey: Keys.Nickname)
+        self.viewModel?.createRoom()
     }
 
 }

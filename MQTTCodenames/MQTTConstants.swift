@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+enum MessageDefaults {
+    static let TopicRoot = "/codenames"
+    static let LastWillMessage = "Goodbye"
+    static let CreateRoomMessage = "Room Created"
+}
+
+enum Keys {
+    static let Nickname = "nickname"
+}

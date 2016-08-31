@@ -12,19 +12,24 @@ import CocoaMQTT
 class MQTTManager {
 
     let mqtt: CocoaMQTT
+    let clientIdPid: String
     
     init () {
-        let clientIdPid = "CocoaMQTT-" + String(NSProcessInfo().processIdentifier)
+        clientIdPid = "CocoaMQTT-" + String(NSProcessInfo().processIdentifier)
         mqtt = CocoaMQTT(clientId: clientIdPid, host: Broker.Host, port: UInt16(Broker.Port)!)
         mqtt.username = Account.Username
         mqtt.password = Account.Password
-        mqtt.willMessage = CocoaMQTTWill(topic: "/codenames", message: "goodbye")
+        mqtt.willMessage = CocoaMQTTWill(topic: MessageDefaults.TopicRoot, message: MessageDefaults.LastWillMessage)
         mqtt.keepAlive = 90
         mqtt.delegate = self
     }
     
     func connect() {
         mqtt.connect()
+    }
+    
+    func publish(topic: String, message: String) {
+        mqtt.publish(topic, withString: message)
     }
     
 }
