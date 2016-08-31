@@ -23,6 +23,9 @@ class MQTTRoomViewController: UIViewController {
             return
         }
         self.roomNameLabel.text = "Room " + roomName
+        self.viewModel?.modelSignal.observeNext { next in
+            self.statusTextView.text = self.statusTextView.text + "\n" + next
+        }
     }
     
     @IBAction func didTapStartGame(sender: AnyObject) {

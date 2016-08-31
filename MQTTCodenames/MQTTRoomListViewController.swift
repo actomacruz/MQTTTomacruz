@@ -15,7 +15,7 @@ class MQTTRoomListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel?.reloadSignal.observeNext { next in
+        self.viewModel?.modelSignal.observeNext { next in
             self.tableView.reloadData()
         }
     }

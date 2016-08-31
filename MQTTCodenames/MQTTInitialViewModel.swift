@@ -12,12 +12,23 @@ import ReactiveCocoa
 struct MQTTInitialViewModel {
     
     var mqttManager: MQTTManager?
-    private var createdTopic: String?
+    private let nickname: String?
+    private let createdTopic: String?
     
-    mutating func createRoom() {
-        createdTopic = MessageDefaults.TopicRoot + "/" + mqttManager!.clientIdPid
+    init(manager: MQTTManager?) {
+        mqttManager = manager
+        nickname = NSUserDefaults.standardUserDefaults().objectForKey(Keys.Nickname) as? String
+        guard let clientIdPiD = mqttManager?.clientIdPid else {
+            createdTopic = MessageDefaults.TopicRoot
+            return
+        }
+        createdTopic = MessageDefaults.TopicRoot + "/" + clientIdPiD
+    }
+    
+    func createRoom() {
         mqttManager?.publish(createdTopic!, message: MessageDefaults.CreateRoomMessage + " - " + mqttManager!.clientIdPid, retained: true)
         mqttManager?.subscribe(createdTopic!)
+        mqttManager?.publish(createdTopic!, message: nickname! + " " + MessageDefaults.JoinRoomMessage)
     }
     
     func joinRoom() {

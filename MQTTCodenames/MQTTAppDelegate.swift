@@ -18,8 +18,7 @@ class MQTTAppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.mqttManager = MQTTManager.init()
         self.mqttManager?.connect()
-        var mqttInitialViewModel = MQTTInitialViewModel()
-        mqttInitialViewModel.mqttManager = mqttManager
+        let mqttInitialViewModel = MQTTInitialViewModel(manager: mqttManager)
         let initialViewController = self.window?.rootViewController as? MQTTInitialViewController
         initialViewController?.viewModel = mqttInitialViewModel
         return true

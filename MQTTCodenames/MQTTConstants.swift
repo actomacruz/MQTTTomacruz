@@ -13,6 +13,7 @@ enum MessageDefaults {
     static let LastWillMessage = "Goodbye"
     static let CreateRoomMessage = "Room Created"
     static let KickRoomMessage = "Room Deleted"
+    static let JoinRoomMessage = "Joined Room"
 }
 
 enum Keys {

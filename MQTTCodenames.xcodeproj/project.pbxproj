@@ -24,6 +24,7 @@
 		F4FD1F5D1D76E2C70097D09E /* MQTTRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD1F5C1D76E2C70097D09E /* MQTTRoomViewModel.swift */; };
 		F4FD1F5F1D7743CF0097D09E /* MQTTRoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD1F5E1D7743CF0097D09E /* MQTTRoomListViewModel.swift */; };
 		F4FD1F611D7743DE0097D09E /* MQTTRoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD1F601D7743DE0097D09E /* MQTTRoomListViewController.swift */; };
+		F4FD1F631D77675E0097D09E /* MessageModelPropagateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD1F621D77675E0097D09E /* MessageModelPropagateProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		F4FD1F5C1D76E2C70097D09E /* MQTTRoomViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTRoomViewModel.swift; sourceTree = "<group>"; };
 		F4FD1F5E1D7743CF0097D09E /* MQTTRoomListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTRoomListViewModel.swift; sourceTree = "<group>"; };
 		F4FD1F601D7743DE0097D09E /* MQTTRoomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTRoomListViewController.swift; sourceTree = "<group>"; };
+		F4FD1F621D77675E0097D09E /* MessageModelPropagateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageModelPropagateProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				F43621D31D6DAFA100003DB5 /* MQTTManager.swift */,
+				F4FD1F621D77675E0097D09E /* MessageModelPropagateProtocol.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				F43621D01D6DAF6D00003DB5 /* MQTTConstants.swift in Sources */,
 				F43621CC1D6DAF1300003DB5 /* MQTTAppDelegate.swift in Sources */,
 				F43621D21D6DAF7800003DB5 /* MQTTInitialViewController.swift in Sources */,
+				F4FD1F631D77675E0097D09E /* MessageModelPropagateProtocol.swift in Sources */,
 				F4FD1F611D7743DE0097D09E /* MQTTRoomListViewController.swift in Sources */,
 				F4FD1F5B1D76E1AF0097D09E /* MQTTRoomViewController.swift in Sources */,
 				F4FD1F5D1D76E2C70097D09E /* MQTTRoomViewModel.swift in Sources */,
