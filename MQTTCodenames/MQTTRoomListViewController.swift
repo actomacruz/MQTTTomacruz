@@ -10,7 +10,8 @@ import UIKit
 import ReactiveCocoa
 
 class MQTTRoomListViewController: UITableViewController {
-
+    
+    var selectedTopic: String?
     var viewModel: MQTTRoomListViewModel?
     
     override func viewDidLoad() {
@@ -42,8 +43,25 @@ class MQTTRoomListViewController: UITableViewController {
         return UITableViewCell()
     }
     
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        return
-//    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let roomName: String? = self.viewModel?.roomListArray[indexPath.row] as? String
+        self.selectedTopic = roomName?.componentsSeparatedByString(" - ")[1]
+        self.performSegueWithIdentifier("PresentJoinedRoom", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        switch (identifier) {
+            case "PresentJoinedRoom":
+                let roomViewController = segue.destinationViewController as! MQTTRoomViewController
+                roomViewController.viewModel = self.viewModel?.roomViewModel(self.selectedTopic!)
+                roomViewController.roomCreator = false
+            
+            default: break
+        }
+    }
     
 }

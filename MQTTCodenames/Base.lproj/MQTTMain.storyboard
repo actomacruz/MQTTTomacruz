@@ -118,6 +118,9 @@
                         </connections>
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="Lvl-FK-00P" kind="presentation" identifier="PresentJoinedRoom" id="6xO-WR-4y8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIs-Mo-gg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -191,4 +194,7 @@
             <point key="canvasLocation" x="743.5" y="202.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="6xO-WR-4y8"/>
+    </inferredMetricsTieBreakers>
 </document>

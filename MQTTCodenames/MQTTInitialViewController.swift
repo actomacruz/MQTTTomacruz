@@ -50,6 +50,7 @@ class MQTTInitialViewController: UIViewController {
             case "PresentCreatedRoom":
                 let roomViewController = segue.destinationViewController as! MQTTRoomViewController
                 roomViewController.viewModel = self.viewModel?.roomViewModel()
+                roomViewController.roomCreator = true
             
             case "PresentRoomList":
                 let roomListViewController = segue.destinationViewController as! MQTTRoomListViewController

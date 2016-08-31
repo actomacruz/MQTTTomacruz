@@ -30,4 +30,8 @@ struct MQTTRoomListViewModel: MessageModelPropagateProtocol {
         }
     }
     
+    func roomViewModel(joinedTopic: String) -> MQTTRoomViewModel {
+        return MQTTRoomViewModel.init(topic: joinedTopic, manager: mqttManager)
+    }
+    
 }
