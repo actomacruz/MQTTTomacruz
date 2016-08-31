@@ -38,6 +38,7 @@ class MQTTInitialViewController: UIViewController {
     @IBAction func didTapCreateRoom(sender: AnyObject) {
         NSUserDefaults.standardUserDefaults().setObject(self.nickNameTextField.text, forKey: Keys.Nickname)
         self.viewModel?.createRoom()
+        self.performSegueWithIdentifier("PresentCreatedRoom", sender: self)
     }
 
 }

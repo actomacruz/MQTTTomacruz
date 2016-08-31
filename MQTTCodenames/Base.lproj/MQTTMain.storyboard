@@ -77,11 +77,68 @@
                         <outlet property="createRoomButton" destination="Tnh-oO-lbp" id="z1N-IH-ntv"/>
                         <outlet property="joinRoomButton" destination="GFT-Uu-hcJ" id="2R4-LH-nOx"/>
                         <outlet property="nickNameTextField" destination="1AR-fq-bK5" id="G9m-dQ-6nB"/>
+                        <segue destination="Lvl-FK-00P" kind="presentation" identifier="PresentCreatedRoom" id="YxT-5M-FGr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="279.5" y="202.5"/>
+        </scene>
+        <!--Room View Controller-->
+        <scene sceneID="TR7-RO-Q2n">
+            <objects>
+                <viewController id="Lvl-FK-00P" customClass="MQTTRoomViewController" customModule="MQTTCodenames" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wH0-Ke-FjX"/>
+                        <viewControllerLayoutGuide type="bottom" id="CrC-y2-b6P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EGG-34-ITi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Created" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qz7-cC-pe5">
+                                <rect key="frame" x="132" y="46" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FD5-PL-Xiq">
+                                <rect key="frame" x="67" y="94" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="EvK-n3-5cJ"/>
+                                    <constraint firstAttribute="height" constant="128" id="IKF-n4-wSP"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MqZ-zd-nan">
+                                <rect key="frame" x="50" y="252" width="78" height="30"/>
+                                <state key="normal" title="Start Game"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kf4-wk-W2s">
+                                <rect key="frame" x="245" y="252" width="80" height="30"/>
+                                <state key="normal" title="Leave Roon"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FD5-PL-Xiq" firstAttribute="centerX" secondItem="EGG-34-ITi" secondAttribute="centerX" id="G8l-39-fEP"/>
+                            <constraint firstItem="MqZ-zd-nan" firstAttribute="leading" secondItem="EGG-34-ITi" secondAttribute="leading" constant="50" id="TNn-e4-f8C"/>
+                            <constraint firstItem="qz7-cC-pe5" firstAttribute="top" secondItem="wH0-Ke-FjX" secondAttribute="bottom" constant="26" id="U3d-VO-GJe"/>
+                            <constraint firstItem="qz7-cC-pe5" firstAttribute="centerX" secondItem="EGG-34-ITi" secondAttribute="centerX" id="dfz-GI-BpG"/>
+                            <constraint firstItem="Kf4-wk-W2s" firstAttribute="top" secondItem="FD5-PL-Xiq" secondAttribute="bottom" constant="30" id="gCG-Qw-0s8"/>
+                            <constraint firstAttribute="trailing" secondItem="Kf4-wk-W2s" secondAttribute="trailing" constant="50" id="lik-7m-TtW"/>
+                            <constraint firstItem="MqZ-zd-nan" firstAttribute="top" secondItem="FD5-PL-Xiq" secondAttribute="bottom" constant="30" id="stF-aX-PNp"/>
+                            <constraint firstItem="FD5-PL-Xiq" firstAttribute="top" secondItem="qz7-cC-pe5" secondAttribute="bottom" constant="27" id="w0v-pU-l8f"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q05-Yu-VJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="743.5" y="202.5"/>
         </scene>
     </scenes>
 </document>
