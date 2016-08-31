@@ -181,6 +181,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="leaveRoomButton" destination="Kf4-wk-W2s" id="WN2-ef-asd"/>
+                        <outlet property="roomNameLabel" destination="qz7-cC-pe5" id="9eI-py-ygm"/>
                         <outlet property="startGameButton" destination="MqZ-zd-nan" id="VJd-Kk-C0j"/>
                         <outlet property="statusTextView" destination="FD5-PL-Xiq" id="QA2-Sy-b0h"/>
                     </connections>

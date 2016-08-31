@@ -12,7 +12,7 @@ import ReactiveCocoa
 struct MQTTInitialViewModel {
     
     var mqttManager: MQTTManager?
-    var createdTopic: String?
+    private var createdTopic: String?
     
     mutating func createRoom() {
         createdTopic = MessageDefaults.TopicRoot + "/" + mqttManager!.clientIdPid

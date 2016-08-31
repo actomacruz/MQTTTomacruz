@@ -11,12 +11,18 @@ import UIKit
 class MQTTRoomViewController: UIViewController {
 
     var viewModel: MQTTRoomViewModel?
+    @IBOutlet weak var roomNameLabel: UILabel!
     @IBOutlet weak var startGameButton: UIButton!
     @IBOutlet weak var leaveRoomButton: UIButton!
     @IBOutlet weak var statusTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let roomName = self.viewModel?.roomName() else {
+            self.roomNameLabel.text = "Room Created"
+            return
+        }
+        self.roomNameLabel.text = "Room " + roomName
     }
     
     @IBAction func didTapStartGame(sender: AnyObject) {

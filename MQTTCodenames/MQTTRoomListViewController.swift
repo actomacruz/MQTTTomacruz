@@ -36,10 +36,14 @@ class MQTTRoomListViewController: UITableViewController {
             cell.textLabel?.adjustsFontSizeToFitWidth = true
             var roomName: String? = self.viewModel?.roomListArray[indexPath.row] as? String
             roomName = roomName?.componentsSeparatedByString("CocoaMQTT-")[1]
-            cell.textLabel?.text = roomName
+            cell.textLabel?.text = "Room " + roomName!
             return cell
         }
         return UITableViewCell()
     }
+    
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        return
+//    }
     
 }

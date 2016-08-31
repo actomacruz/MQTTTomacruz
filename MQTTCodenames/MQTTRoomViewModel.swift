@@ -10,8 +10,8 @@ import Foundation
 
 struct MQTTRoomViewModel {
     
-    let createdTopic: String?
     var mqttManager: MQTTManager?
+    private let createdTopic: String?
     
     init(topic: String?) {
         createdTopic = topic
@@ -24,6 +24,10 @@ struct MQTTRoomViewModel {
         mqttManager?.publish(topic, message: MessageDefaults.KickRoomMessage)
         mqttManager?.publish(topic, message: "", retained: true)
         mqttManager?.unsubscribe(topic)
+    }
+    
+    func roomName() -> String? {
+        return mqttManager?.clientIdPid.componentsSeparatedByString("-")[1]
     }
     
 }
