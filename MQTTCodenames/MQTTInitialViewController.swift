@@ -8,15 +8,34 @@
 
 import UIKit
 import ReactiveCocoa
+import enum Result.NoError
 
 class MQTTInitialViewController: UIViewController {
     
-    @IBOutlet weak var emailAdressTextField: UITextField?
-    @IBOutlet weak var displayNameTextField: UITextField?
-    @IBOutlet weak var startGameButton: UIButton?
+    var mqttManager: MQTTManager?
+    @IBOutlet weak var createRoomButton: UIButton!
+    @IBOutlet weak var joinRoomButton: UIButton!
+    @IBOutlet weak var nickNameTextField: UITextField!
 
     override func viewDidLoad() {
+        let textFieldSignal = self.nickNameTextField.rac_textSignal().toSignalProducer()
+                                .flatMapError { error in
+                                    return SignalProducer<AnyObject?, NoError>.empty
+                                }
+                                .map { text in
+                                    Bool(text?.length > 3)
+                                }
+        DynamicProperty(object: self.createRoomButton, keyPath: "enabled") <~ textFieldSignal
+        DynamicProperty(object: self.joinRoomButton, keyPath: "enabled") <~ textFieldSignal
         super.viewDidLoad()
+    }
+    
+    @IBAction func didTapJoinRoom(sender: AnyObject) {
+        print("Join")
+    }
+    
+    @IBAction func didTapCreateRoom(sender: AnyObject) {
+        print("Create")
     }
 
 }
