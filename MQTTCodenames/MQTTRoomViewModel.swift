@@ -21,6 +21,8 @@ struct MQTTRoomViewModel {
         guard let topic = createdTopic else {
             return
         }
+        mqttManager?.publish(topic, message: MessageDefaults.KickRoomMessage)
+        mqttManager?.publish(topic, message: "", retained: true)
         mqttManager?.unsubscribe(topic)
     }
     

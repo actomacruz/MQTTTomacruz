@@ -32,7 +32,7 @@ class MQTTInitialViewController: UIViewController {
     
     @IBAction func didTapJoinRoom(sender: AnyObject) {
         NSUserDefaults.standardUserDefaults().setObject(self.nickNameTextField.text, forKey: Keys.Nickname)
-        print("Join")
+        self.performSegueWithIdentifier("PresentRoomList", sender: self)
     }
     
     @IBAction func didTapCreateRoom(sender: AnyObject) {
@@ -50,6 +50,10 @@ class MQTTInitialViewController: UIViewController {
             case "PresentCreatedRoom":
                 let roomViewController = segue.destinationViewController as! MQTTRoomViewController
                 roomViewController.viewModel = self.viewModel?.roomViewModel()
+            
+            case "PresentRoomList":
+                let roomListViewController = segue.destinationViewController as! MQTTRoomListViewController
+                roomListViewController.viewModel = self.viewModel?.roomListViewModel()
             
             default: break
         }

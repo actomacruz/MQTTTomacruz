@@ -15,6 +15,11 @@ class MQTTRoomViewController: UIViewController {
     @IBOutlet weak var leaveRoomButton: UIButton!
     @IBOutlet weak var statusTextView: UITextView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
     @IBAction func didTapStartGame(sender: AnyObject) {
         print("Start Game")
     }

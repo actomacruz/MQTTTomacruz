@@ -30,4 +30,8 @@ struct MQTTInitialViewModel {
         return roomViewModel
     }
     
+    func roomListViewModel() -> MQTTRoomListViewModel {
+        return MQTTRoomListViewModel.init(manager: mqttManager)
+    }
+    
 }

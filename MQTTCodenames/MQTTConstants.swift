@@ -12,6 +12,7 @@ enum MessageDefaults {
     static let TopicRoot = "/codenames"
     static let LastWillMessage = "Goodbye"
     static let CreateRoomMessage = "Room Created"
+    static let KickRoomMessage = "Room Deleted"
 }
 
 enum Keys {
