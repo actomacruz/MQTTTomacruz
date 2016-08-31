@@ -17,7 +17,6 @@ class MQTTRoomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func didTapStartGame(sender: AnyObject) {

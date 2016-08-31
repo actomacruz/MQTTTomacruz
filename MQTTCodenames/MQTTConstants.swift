@@ -9,7 +9,7 @@
 import Foundation
 
 enum MessageDefaults {
-    static let TopicRoot = "/codenames"
+    static let TopicRoot = "/codenames-real"
     static let LastWillMessage = "Goodbye"
     static let CreateRoomMessage = "Room Created"
     static let KickRoomMessage = "Room Deleted"

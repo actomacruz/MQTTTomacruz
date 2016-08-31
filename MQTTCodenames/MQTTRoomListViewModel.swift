@@ -7,14 +7,22 @@
 //
 
 import Foundation
+import ReactiveCocoa
 
-struct MQTTRoomListViewModel {
+class MQTTRoomListViewModel : NSObject {
     
     var mqttManager: MQTTManager?
+    var roomListArray = NSMutableArray()
     
     init(manager: MQTTManager?) {
+        super.init()
         mqttManager = manager
         mqttManager?.subscribe(MessageDefaults.TopicRoot + "/+")
+        mqttManager?.messageSignal.observeNext { [unowned self] next in
+            if (next.hasPrefix(MessageDefaults.CreateRoomMessage)) {
+                self.roomListArray.addObject(next)
+            }
+        }
     }
     
 }

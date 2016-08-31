@@ -8,13 +8,19 @@
 
 import Foundation
 import CocoaMQTT
+import ReactiveCocoa
+import enum Result.NoError
 
 class MQTTManager {
 
     let clientIdPid: String
     private let mqtt: CocoaMQTT
     
+    var messageSignal: Signal<String, NoError>
+    var messageObserver: Observer<String, NoError>
+    
     init () {
+        (messageSignal, messageObserver) = Signal<String, NoError>.pipe()
         clientIdPid = "CocoaMQTT-" + String(NSProcessInfo().processIdentifier)
         mqtt = CocoaMQTT(clientId: clientIdPid, host: Broker.Host, port: UInt16(Broker.Port)!)
         mqtt.username = Account.Username
@@ -65,11 +71,12 @@ extension MQTTManager: CocoaMQTTDelegate {
     }
     
     func mqtt(mqtt: CocoaMQTT, didReceiveMessage message: CocoaMQTTMessage, id: UInt16 ) {
-        guard message.string != nil else {
+        guard let messageText = message.string else {
             print("didReceivedMessage: NOT STRING with id \(id)")
             return
         }
-        print("didReceivedMessage: \(message.string) with id \(id)")
+        messageObserver.sendNext(messageText)
+        print("didReceivedMessage: \(messageText) with id \(id)")
     }
     
     func mqtt(mqtt: CocoaMQTT, didSubscribeTopic topic: String) {
