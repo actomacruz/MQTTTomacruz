@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+struct MQTTRoomViewModel {
+    
+    let createdTopic: String?
+    var mqttManager: MQTTManager?
+    
+    init(topic: String?) {
+        createdTopic = topic
+    }
+    
+    func leaveRoom() {
+        guard let topic = createdTopic else {
+            return
+        }
+        mqttManager?.unsubscribe(topic)
+    }
+    
+}

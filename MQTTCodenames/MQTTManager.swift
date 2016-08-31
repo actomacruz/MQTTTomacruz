@@ -11,8 +11,8 @@ import CocoaMQTT
 
 class MQTTManager {
 
-    let mqtt: CocoaMQTT
     let clientIdPid: String
+    private let mqtt: CocoaMQTT
     
     init () {
         clientIdPid = "CocoaMQTT-" + String(NSProcessInfo().processIdentifier)
@@ -30,6 +30,18 @@ class MQTTManager {
     
     func publish(topic: String, message: String) {
         mqtt.publish(topic, withString: message)
+    }
+    
+    func publish(topic: String, message: String, retained: Bool) {
+        mqtt.publish(topic, withString: message, qos: CocoaMQTTQOS.QOS0, retained: retained, dup: false)
+    }
+    
+    func subscribe(topic: String) {
+        mqtt.subscribe(topic)
+    }
+    
+    func unsubscribe(topic: String) {
+        mqtt.unsubscribe(topic)
     }
     
 }

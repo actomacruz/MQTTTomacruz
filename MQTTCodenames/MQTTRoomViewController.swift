@@ -10,4 +10,6 @@ import UIKit
 
 class MQTTRoomViewController: UIViewController {
 
+    var viewModel: MQTTRoomViewModel?
+    
 }

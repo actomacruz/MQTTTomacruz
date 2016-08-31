@@ -40,6 +40,20 @@ class MQTTInitialViewController: UIViewController {
         self.viewModel?.createRoom()
         self.performSegueWithIdentifier("PresentCreatedRoom", sender: self)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        switch (identifier) {
+            case "PresentCreatedRoom":
+                let roomViewController = segue.destinationViewController as! MQTTRoomViewController
+                roomViewController.viewModel = self.viewModel?.roomViewModel()
+            
+            default: break
+        }
+    }
 
 }
 
