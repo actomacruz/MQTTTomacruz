@@ -15,7 +15,7 @@ class MQTTRoomListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DynamicProperty(object: self.viewModel, keyPath: "roomListArray").signal.observeNext { next in
+        self.viewModel?.reloadSignal.observeNext { next in
             self.tableView.reloadData()
         }
     }

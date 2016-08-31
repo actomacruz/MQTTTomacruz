@@ -8,19 +8,24 @@
 
 import Foundation
 import ReactiveCocoa
+import enum Result.NoError
 
-class MQTTRoomListViewModel : NSObject {
+struct MQTTRoomListViewModel {
     
     var mqttManager: MQTTManager?
     var roomListArray = NSMutableArray()
     
+    var reloadSignal: Signal<Bool, NoError>
+    var reloadObserver: Observer<Bool, NoError>
+    
     init(manager: MQTTManager?) {
-        super.init()
         mqttManager = manager
+        (reloadSignal, reloadObserver) = Signal<Bool, NoError>.pipe()
         mqttManager?.subscribe(MessageDefaults.TopicRoot + "/+")
-        mqttManager?.messageSignal.observeNext { [unowned self] next in
+        mqttManager?.messageSignal.observeNext { next in
             if (next.hasPrefix(MessageDefaults.CreateRoomMessage)) {
                 self.roomListArray.addObject(next)
+                self.reloadObserver.sendNext(true)
             }
         }
     }
