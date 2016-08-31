@@ -17,6 +17,7 @@ struct MQTTInitialViewModel {
     mutating func createRoom() {
         createdTopic = MessageDefaults.TopicRoot + "/" + mqttManager!.clientIdPid
         mqttManager?.publish(createdTopic!, message: MessageDefaults.CreateRoomMessage, retained: true)
+        mqttManager?.subscribe(createdTopic!)
     }
     
     func joinRoom() {
@@ -24,7 +25,9 @@ struct MQTTInitialViewModel {
     }
     
     func roomViewModel() -> MQTTRoomViewModel {
-        return MQTTRoomViewModel.init(topic: createdTopic)
+        var roomViewModel = MQTTRoomViewModel.init(topic: createdTopic)
+        roomViewModel.mqttManager = mqttManager
+        return roomViewModel
     }
     
 }

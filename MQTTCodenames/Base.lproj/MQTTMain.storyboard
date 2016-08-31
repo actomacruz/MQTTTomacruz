@@ -116,10 +116,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MqZ-zd-nan">
                                 <rect key="frame" x="50" y="252" width="78" height="30"/>
                                 <state key="normal" title="Start Game"/>
+                                <connections>
+                                    <action selector="didTapStartGame:" destination="Lvl-FK-00P" eventType="touchUpInside" id="RwM-8u-hgN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kf4-wk-W2s">
                                 <rect key="frame" x="245" y="252" width="80" height="30"/>
                                 <state key="normal" title="Leave Roon"/>
+                                <connections>
+                                    <action selector="didTapLeaveRoom:" destination="Lvl-FK-00P" eventType="touchUpInside" id="JPA-MD-U60"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -135,6 +141,11 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="leaveRoomButton" destination="Kf4-wk-W2s" id="WN2-ef-asd"/>
+                        <outlet property="startGameButton" destination="MqZ-zd-nan" id="VJd-Kk-C0j"/>
+                        <outlet property="statusTextView" destination="FD5-PL-Xiq" id="QA2-Sy-b0h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q05-Yu-VJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
