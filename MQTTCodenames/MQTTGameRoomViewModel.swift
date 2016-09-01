@@ -64,8 +64,8 @@ struct MQTTGameRoomViewModel {
         }
     }
     
-    func wordList() -> [String] {
-        return word
+    func wordForIndex(index: Int) -> String {
+        return word[index]
     }
     
 }

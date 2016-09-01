@@ -27,9 +27,17 @@ class MQTTGameRoomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonArray = [UIButton]()
-        nicknameLabel.text = "Hi " + self.viewModel!.nameDisplay()
-        teamLabel.text = "Team: " + self.viewModel!.teamName()
+        self.buttonArray = [UIButton]()
+        for subview in self.buttonView.subviews {
+            if subview.isKindOfClass(UIButton) {
+                self.buttonArray?.append(subview as! UIButton)
+            }
+        }
+        for button in self.buttonArray! {
+            button.setTitle(self.viewModel?.wordForIndex(button.tag - 1), forState: UIControlState.Normal)
+        }
+        self.nicknameLabel.text = "Hi " + self.viewModel!.nameDisplay()
+        self.teamLabel.text = "Team: " + self.viewModel!.teamName()
         if (self.viewModel!.willShowPattern()) {
             self.patternImageView.image = UIImage.init(named: (self.viewModel?.patternImageName())!)
         }
