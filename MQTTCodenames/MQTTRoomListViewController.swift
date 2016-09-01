@@ -45,6 +45,7 @@ class MQTTRoomListViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.selectedRoom = indexPath.row
+        self.viewModel?.unsubscribe()
         self.performSegueWithIdentifier("PresentJoinedRoom", sender: self)
     }
     

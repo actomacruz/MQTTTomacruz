@@ -30,6 +30,10 @@ struct MQTTRoomListViewModel: MessageModelPropagateProtocol {
         }
     }
     
+    func unsubscribe() {
+        mqttManager?.unsubscribe(MessageDefaults.TopicRoot + "/+")
+    }
+    
     func roomViewModel(selectedRoom: Int, roomCreator: Bool) -> MQTTRoomViewModel {
         let roomName: String? = roomListArray[selectedRoom] as? String
         let topic = MessageDefaults.TopicRoot + "/" + (roomName?.componentsSeparatedByString(" - ")[1])!
