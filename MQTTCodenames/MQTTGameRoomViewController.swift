@@ -55,7 +55,7 @@ class MQTTGameRoomViewController: UIViewController, UIAlertViewDelegate {
                 return
             }
             if (next.hasPrefix(MessageDefaults.RemoveWordMessage)) {
-                let index = Int(next.componentsSeparatedByString(" - ")[1])! + 1
+                let index = Int(next.componentsSeparatedByString(" - ")[1])!
                 _ = weakSelf.buttonArray?.filter {
                     if ($0.tag == index) {
                         $0.alpha = 0
@@ -154,7 +154,7 @@ class MQTTGameRoomViewController: UIViewController, UIAlertViewDelegate {
     @IBAction func didTapWordButton(sender: AnyObject) {
         if (!(self.viewModel!.isDescriber())) {
             let button = sender as! UIButton
-            self.viewModel?.chooseWord(button.tag - 1)
+            self.viewModel?.chooseWord(button.tag)
         }
     }
     
