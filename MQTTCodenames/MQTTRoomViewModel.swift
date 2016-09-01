@@ -12,6 +12,7 @@ import enum Result.NoError
 
 struct MQTTRoomViewModel: MessageModelPropagateProtocol {
     
+    var roomCreator: Bool?
     var mqttManager: MQTTManager?
     private let nickname: String?
     private let createdOrJoinedTopic: String?
@@ -38,10 +39,11 @@ struct MQTTRoomViewModel: MessageModelPropagateProtocol {
     }
     
     func leaveRoom() {
-        guard let topic = createdOrJoinedTopic else {
+        guard let topic = createdOrJoinedTopic, let name = nickname else {
             return
         }
         mqttManager?.publish(topic, message: MessageDefaults.KickRoomMessage)
+        mqttManager?.publish(topic, message: name + " " + MessageDefaults.LeaveRoomMessage)
         mqttManager?.publish(topic, message: "", retained: true)
         mqttManager?.unsubscribe(topic)
     }

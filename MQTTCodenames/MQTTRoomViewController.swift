@@ -10,7 +10,6 @@ import UIKit
 
 class MQTTRoomViewController: UIViewController {
     
-    var roomCreator: Bool?
     var viewModel: MQTTRoomViewModel?
     @IBOutlet weak var roomNameLabel: UILabel!
     @IBOutlet weak var startGameButton: UIButton!
@@ -27,7 +26,7 @@ class MQTTRoomViewController: UIViewController {
         self.viewModel?.modelSignal.observeNext { next in
             self.statusTextView.text = self.statusTextView.text + "\n" + next
         }
-        self.startGameButton.hidden = !(self.roomCreator!)
+        self.startGameButton.hidden = !((self.viewModel?.roomCreator)!)
     }
     
     @IBAction func didTapStartGame(sender: AnyObject) {

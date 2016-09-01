@@ -11,7 +11,7 @@ import ReactiveCocoa
 
 class MQTTRoomListViewController: UITableViewController {
     
-    var selectedTopic: String?
+    var selectedRoom: Int?
     var viewModel: MQTTRoomListViewModel?
     
     override func viewDidLoad() {
@@ -44,8 +44,7 @@ class MQTTRoomListViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let roomName: String? = self.viewModel?.roomListArray[indexPath.row] as? String
-        self.selectedTopic = roomName?.componentsSeparatedByString(" - ")[1]
+        self.selectedRoom = indexPath.row
         self.performSegueWithIdentifier("PresentJoinedRoom", sender: self)
     }
     
@@ -57,8 +56,7 @@ class MQTTRoomListViewController: UITableViewController {
         switch (identifier) {
             case "PresentJoinedRoom":
                 let roomViewController = segue.destinationViewController as! MQTTRoomViewController
-                roomViewController.viewModel = self.viewModel?.roomViewModel(self.selectedTopic!)
-                roomViewController.roomCreator = false
+                roomViewController.viewModel = self.viewModel?.roomViewModel(self.selectedRoom!, roomCreator: false)
             
             default: break
         }
