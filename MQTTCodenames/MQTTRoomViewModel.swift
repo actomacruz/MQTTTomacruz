@@ -14,6 +14,8 @@ struct MQTTRoomViewModel: MessageModelPropagateProtocol {
     
     var roomCreator: Bool
     var mqttManager: MQTTManager?
+    var playerCount: MutableProperty<Int>
+    
     private let nickname: String?
     private let createdOrJoinedTopic: String?
     
@@ -24,10 +26,17 @@ struct MQTTRoomViewModel: MessageModelPropagateProtocol {
         createdOrJoinedTopic = topic
         mqttManager = manager
         roomCreator = creator
+        playerCount = MutableProperty<Int>(0)
         nickname = NSUserDefaults.standardUserDefaults().objectForKey(Keys.Nickname) as? String
         (modelSignal, modelObserver) = Signal<String, NoError>.pipe()
         mqttManager?.messageSignal.observeNext { next in
             if (!(next.hasPrefix(MessageDefaults.CreateRoomMessage) || next.hasPrefix(MessageDefaults.KickRoomMessage))) {
+                if (next.hasSuffix(MessageDefaults.JoinRoomMessage)) {
+                    self.playerCount.value = self.playerCount.value + 1
+                }
+                else if (next.hasSuffix(MessageDefaults.LeaveRoomMessage)) {
+                    self.playerCount.value = self.playerCount.value - 1
+                }
                 self.modelObserver.sendNext(next)
             }
             else if (next.hasPrefix(MessageDefaults.KickRoomMessage)) {

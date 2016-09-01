@@ -42,7 +42,7 @@ class MQTTInitialViewController: UIViewController {
     }
     
     @IBAction func unwindSegueForRoom(unwindSegue: UIStoryboardSegue) {
-        // Do nothing UnwindForInitial
+        // Do nothing
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

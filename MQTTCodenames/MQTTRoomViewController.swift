@@ -23,16 +23,27 @@ class MQTTRoomViewController: UIViewController, UIAlertViewDelegate {
             return
         }
         self.roomNameLabel.text = "Room " + roomName
-        self.viewModel?.modelSignal.observeNext { next in
+        self.viewModel?.modelSignal.observeNext { [unowned self] next in
             self.statusTextView.text = self.statusTextView.text + "\n" + next
         }
-        self.viewModel?.modelSignal.observeInterrupted {
+        self.viewModel?.modelSignal.observeInterrupted { [unowned self] in
             if (!(self.viewModel!.roomCreator)) {
                 let alertView = UIAlertView.init(title: "Oops", message: "Room creator has left the room", delegate: self, cancelButtonTitle: "OK")
                 alertView.show()
             }
         }
-        self.startGameButton.hidden = !((self.viewModel?.roomCreator)!)
+        self.startGameButton.hidden = !(self.viewModel!.roomCreator)
+        self.startGameButton.enabled = false
+        if (self.viewModel!.roomCreator) {
+            self.viewModel?.playerCount.signal.observeNext { [unowned self] next in
+                if (next >= 4) {
+                    self.startGameButton.enabled = true
+                }
+                else {
+                    self.startGameButton.enabled = false
+                }
+            }
+        }
     }
     
     @IBAction func didTapStartGame(sender: AnyObject) {
