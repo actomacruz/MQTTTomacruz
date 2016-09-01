@@ -211,7 +211,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ve-ku-frp">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="576"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="546"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXn-iQ-fhg">
                                                 <rect key="frame" x="8" y="14" width="81.5" height="17"/>
@@ -539,7 +539,7 @@
                                             <constraint firstItem="cXn-iQ-fhg" firstAttribute="leading" secondItem="0Ve-ku-frp" secondAttribute="leading" constant="8" id="DWQ-Q4-yKT"/>
                                             <constraint firstItem="drq-fk-TJN" firstAttribute="top" secondItem="cXn-iQ-fhg" secondAttribute="bottom" constant="2" id="Dyx-a9-p78"/>
                                             <constraint firstItem="cXn-iQ-fhg" firstAttribute="top" secondItem="0Ve-ku-frp" secondAttribute="top" constant="14" id="Lw1-GZ-Djr"/>
-                                            <constraint firstAttribute="bottom" secondItem="g6Y-ps-0jZ" secondAttribute="bottom" constant="50" id="S9j-0W-2PB"/>
+                                            <constraint firstAttribute="bottom" secondItem="g6Y-ps-0jZ" secondAttribute="bottom" constant="20" id="S9j-0W-2PB"/>
                                             <constraint firstItem="g6Y-ps-0jZ" firstAttribute="top" secondItem="lNC-To-v0U" secondAttribute="bottom" constant="25" id="Yhx-8W-gfb"/>
                                             <constraint firstItem="ARh-do-4FX" firstAttribute="leading" secondItem="g6Y-ps-0jZ" secondAttribute="trailing" constant="22" id="ZUR-3v-Q48"/>
                                             <constraint firstItem="g6Y-ps-0jZ" firstAttribute="leading" secondItem="0Ve-ku-frp" secondAttribute="leading" constant="8" id="bNZ-2e-3sY"/>
@@ -574,6 +574,9 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="scrollView" destination="gje-6e-z6k" id="tRB-kj-deR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TH5-xY-BjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
