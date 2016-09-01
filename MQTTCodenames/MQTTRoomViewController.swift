@@ -70,8 +70,8 @@ class MQTTRoomViewController: UIViewController, UIAlertViewDelegate {
         
         switch (identifier) {
             case "PresentGameRoom":
-            let gameRoomViewController = segue.destinationViewController as! MQTTGameRoomViewController
-            gameRoomViewController.viewModel = self.viewModel?.gameRoomViewModel()
+                let gameRoomViewController = segue.destinationViewController as! MQTTGameRoomViewController
+                gameRoomViewController.viewModel = self.viewModel?.gameRoomViewModel()
             
             default: break
         }

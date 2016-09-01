@@ -18,7 +18,8 @@ struct MQTTRoomViewModel: MessageModelPropagateProtocol {
     private let nickname: String?
     private var mqttManager: MQTTManager?
     private let createdOrJoinedTopic: String?
-    private var gameRoomViewModelVariable: MQTTGameRoomViewModel?
+    private var assignedRole: Role?
+    private var assignedTeam: Team?
     
     var modelSignal: Signal<String, NoError>
     var modelObserver: Observer<String, NoError>
@@ -51,21 +52,18 @@ struct MQTTRoomViewModel: MessageModelPropagateProtocol {
                 if (messageClientID == self.mqttManager?.clientIdPid) {
                     let messageTeam = next.componentsSeparatedByString(" - ")[2]
                     let messageRole = next.componentsSeparatedByString(" - ")[3]
-                    var role: Role
-                    var team: Team
                     if (messageTeam == "Red") {
-                        team = Team.Red
+                        self.assignedTeam = Team.Red
                     }
                     else {
-                        team = Team.Blue
+                        self.assignedTeam = Team.Blue
                     }
                     if (messageRole == "Describer") {
-                        role = Role.Describer
+                        self.assignedRole = Role.Describer
                     }
                     else {
-                        role = Role.Guesser
+                        self.assignedRole = Role.Guesser
                     }
-                    self.gameRoomViewModelVariable = MQTTGameRoomViewModel.init(topic: self.createdOrJoinedTopic, manager: self.mqttManager, randomTeam: team, randomRole: role)
                 }
             }
             else if (next.hasPrefix(MessageDefaults.StartGameMessage)) {
@@ -116,7 +114,7 @@ struct MQTTRoomViewModel: MessageModelPropagateProtocol {
     }
     
     func gameRoomViewModel() -> MQTTGameRoomViewModel? {
-        return gameRoomViewModelVariable
+        return  MQTTGameRoomViewModel.init(topic: self.createdOrJoinedTopic, manager: self.mqttManager, randomTeam: self.assignedTeam!, randomRole: self.assignedRole!)
     }
     
 }
