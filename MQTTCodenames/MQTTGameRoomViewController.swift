@@ -48,6 +48,7 @@ class MQTTGameRoomViewController: UIViewController {
             self.patternImageView.hidden = true
             self.slider.hidden = true
         }
+        self.submitButton.enabled = false
         
         self.viewModel?.modelSignal.observeNext { [weak self] next in
             guard let weakSelf = self else {
@@ -87,6 +88,16 @@ class MQTTGameRoomViewController: UIViewController {
                 }
             DynamicProperty(object: self.submitButton, keyPath: "enabled") <~ textFieldSignal
         }
+        else {
+            let textFieldSignal = self.textField.rac_textSignal().toSignalProducer()
+                .flatMapError { error in
+                    return SignalProducer<AnyObject?, NoError>.empty
+                }
+                .map { text in
+                    Bool(text?.length > 0)
+                }
+            DynamicProperty(object: self.submitButton, keyPath: "enabled") <~ textFieldSignal
+        }
         
         self.viewModel?.determineFirstTurn()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
@@ -108,6 +119,7 @@ class MQTTGameRoomViewController: UIViewController {
             self.viewModel?.publish(self.textField.text!)
         }
         self.textField.text = ""
+        self.submitButton.enabled = false
     }
     
     @IBAction func didTapWordButton(sender: AnyObject) {
@@ -115,7 +127,6 @@ class MQTTGameRoomViewController: UIViewController {
         if (!(self.viewModel!.isDescriber())) {
             // check number of chosen words
         }
-        self.textField.text = ""
     }
     
     func keyboardWillShow(aNotification: NSNotification) {

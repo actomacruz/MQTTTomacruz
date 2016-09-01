@@ -243,6 +243,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button 7"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="zBA-IF-9U9"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYJ-t1-YfF">
                                                         <rect key="frame" x="121" y="61" width="50" height="45"/>
@@ -252,6 +255,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button 8"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="ub0-N8-EhW"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEg-gR-zlh">
                                                         <rect key="frame" x="241" y="61" width="50" height="45"/>
@@ -261,6 +267,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button10"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="Yel-nc-mWP"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJW-kt-0zc">
                                                         <rect key="frame" x="1" y="114" width="50" height="45"/>
@@ -270,6 +279,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button11"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="O7P-Rj-MSQ"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drc-o0-BZV">
                                                         <rect key="frame" x="61" y="114" width="50" height="45"/>
@@ -279,6 +291,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button12"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="pfX-Az-cue"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fb-Z6-405">
                                                         <rect key="frame" x="121" y="114" width="50" height="45"/>
@@ -288,6 +303,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button13"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="4Da-fQ-ugC"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="433-vG-Vat">
                                                         <rect key="frame" x="181" y="114" width="50" height="45"/>
@@ -297,6 +315,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button14"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="tC0-CM-jCh"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiD-zy-KQ2">
                                                         <rect key="frame" x="241" y="114" width="50" height="45"/>
@@ -306,6 +327,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button15"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="Jft-0I-Tep"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHJ-Lp-2Rh">
                                                         <rect key="frame" x="61" y="167" width="50" height="45"/>
@@ -315,6 +339,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button17"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="z4v-oA-Lvn"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSF-y0-iJa">
                                                         <rect key="frame" x="121" y="167" width="50" height="45"/>
@@ -324,6 +351,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button18"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="dyV-go-nFG"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIi-wr-zNQ">
                                                         <rect key="frame" x="181" y="167" width="50" height="45"/>
@@ -333,6 +363,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button19"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="s72-26-tMi"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qv9-5Z-Sjl">
                                                         <rect key="frame" x="241" y="167" width="50" height="45"/>
@@ -342,6 +375,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button20"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="4Ne-Jb-QRh"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pW-Wj-CVy">
                                                         <rect key="frame" x="1" y="167" width="50" height="45"/>
@@ -351,6 +387,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button16"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="fMz-gf-ogu"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBs-Vl-67M">
                                                         <rect key="frame" x="1" y="220" width="50" height="45"/>
@@ -360,6 +399,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button21"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="s48-Yx-YnR"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaZ-Kt-ceX">
                                                         <rect key="frame" x="61" y="8" width="50" height="45"/>
@@ -369,6 +411,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button 2"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="Gng-0g-uvw"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KT6-sw-qna">
                                                         <rect key="frame" x="121" y="8" width="50" height="45"/>
@@ -378,6 +423,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button 3"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="gwf-cg-nu3"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGs-bn-vQP">
                                                         <rect key="frame" x="181" y="8" width="50" height="45"/>
@@ -387,6 +435,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button 4"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="f2h-Bd-2zl"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKF-xu-dks">
                                                         <rect key="frame" x="241" y="8" width="50" height="45"/>
@@ -396,6 +447,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button 5"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="ogW-xb-DDP"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFH-f5-UcG">
                                                         <rect key="frame" x="61" y="220" width="50" height="45"/>
@@ -405,6 +459,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button22"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="x4c-GP-axO"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAE-ef-4GO">
                                                         <rect key="frame" x="121" y="220" width="50" height="45"/>
@@ -414,6 +471,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button23"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="Rj6-eC-CWD"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ie-eK-mO9">
                                                         <rect key="frame" x="181" y="220" width="50" height="45"/>
@@ -423,6 +483,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button24"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="nup-dT-Phr"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UcS-Zy-UwX">
                                                         <rect key="frame" x="241" y="220" width="50" height="45"/>
@@ -432,6 +495,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button25"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="ly7-eI-iCm"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3J-P7-wVh">
                                                         <rect key="frame" x="1" y="8" width="50" height="45"/>
@@ -441,6 +507,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button 1"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="1IY-Nr-yeb"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGg-Wa-Z24">
                                                         <rect key="frame" x="1" y="61" width="50" height="45"/>
@@ -450,6 +519,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button 6"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="Nul-0N-UYx"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKE-Df-mYN">
                                                         <rect key="frame" x="181" y="61" width="50" height="45"/>
@@ -459,6 +531,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <state key="normal" title="Button 9"/>
+                                                        <connections>
+                                                            <action selector="didTapWordButton:" destination="mig-zj-IXf" eventType="touchUpInside" id="k79-aD-AXo"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
