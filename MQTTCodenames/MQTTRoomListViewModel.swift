@@ -18,12 +18,12 @@ struct MQTTRoomListViewModel {
     init(manager: MQTTManager?) {
         mqttManager = manager
         roomListArray = MutableProperty<[String]>([String]())
-        mqttManager?.subscribe(MessageDefaults.TopicRoot + "/+")
         mqttManager?.messageSignal.observeNext { next in
             if (next.hasPrefix(MessageDefaults.CreateRoomMessage)) {
                 self.roomListArray.value.append(next)
             }
         }
+        mqttManager?.subscribe(MessageDefaults.TopicRoot + "/+")
     }
     
     func unsubscribe() {

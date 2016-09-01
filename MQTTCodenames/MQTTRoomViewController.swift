@@ -26,6 +26,12 @@ class MQTTRoomViewController: UIViewController {
         self.viewModel?.modelSignal.observeNext { next in
             self.statusTextView.text = self.statusTextView.text + "\n" + next
         }
+        self.viewModel?.modelSignal.observeInterrupted {
+            self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                let alertView = UIAlertView.init(title: "Oops", message: "Room creator has left the room", delegate: nil, cancelButtonTitle: "OK")
+                alertView.show()
+            })
+        }
         self.startGameButton.hidden = !((self.viewModel?.roomCreator)!)
     }
     

@@ -30,6 +30,9 @@ struct MQTTRoomViewModel: MessageModelPropagateProtocol {
             if (!(next.hasPrefix(MessageDefaults.CreateRoomMessage) || next.hasPrefix(MessageDefaults.KickRoomMessage))) {
                 self.modelObserver.sendNext(next)
             }
+            else if (next.hasPrefix(MessageDefaults.KickRoomMessage)) {
+                self.modelObserver.sendInterrupted()
+            }
         }
         mqttManager?.subscribeSignal.observeNext { next in
             if (next) {
