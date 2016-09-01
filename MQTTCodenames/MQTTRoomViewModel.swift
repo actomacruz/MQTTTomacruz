@@ -13,10 +13,10 @@ import enum Result.NoError
 struct MQTTRoomViewModel: MessageModelPropagateProtocol {
     
     var roomCreator: Bool
-    var mqttManager: MQTTManager?
     var playerCount: MutableProperty<Int>
     
     private let nickname: String?
+    private var mqttManager: MQTTManager?
     private let createdOrJoinedTopic: String?
     
     var modelSignal: Signal<String, NoError>

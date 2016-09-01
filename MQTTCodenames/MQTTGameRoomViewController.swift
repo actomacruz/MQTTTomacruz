@@ -10,7 +10,10 @@ import UIKit
 
 class MQTTGameRoomViewController: UIViewController {
 
+    var viewModel: MQTTGameRoomViewModel?
+    
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var buttonView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

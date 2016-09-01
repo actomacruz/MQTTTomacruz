@@ -21,12 +21,13 @@
 		F43621D41D6DAFA100003DB5 /* MQTTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43621D31D6DAFA100003DB5 /* MQTTManager.swift */; };
 		F47022351D76B1DF00F1C6D0 /* MQTTInitialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47022341D76B1DF00F1C6D0 /* MQTTInitialViewModel.swift */; };
 		F49499121D78361500DF48DC /* MQTTGameRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49499111D78361500DF48DC /* MQTTGameRoomViewController.swift */; };
+		F49499141D789B5A00DF48DC /* MQTTGameRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49499131D789B5A00DF48DC /* MQTTGameRoomViewModel.swift */; };
 		F4FD1F5B1D76E1AF0097D09E /* MQTTRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD1F5A1D76E1AF0097D09E /* MQTTRoomViewController.swift */; };
 		F4FD1F5D1D76E2C70097D09E /* MQTTRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD1F5C1D76E2C70097D09E /* MQTTRoomViewModel.swift */; };
 		F4FD1F5F1D7743CF0097D09E /* MQTTRoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD1F5E1D7743CF0097D09E /* MQTTRoomListViewModel.swift */; };
 		F4FD1F611D7743DE0097D09E /* MQTTRoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD1F601D7743DE0097D09E /* MQTTRoomListViewController.swift */; };
 		F4FD1F631D77675E0097D09E /* MessageModelPropagateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD1F621D77675E0097D09E /* MessageModelPropagateProtocol.swift */; };
-		F4FD1F651D7814FB0097D09E /* PuzzleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD1F641D7814FB0097D09E /* PuzzleModel.swift */; };
+		F4FD1F651D7814FB0097D09E /* MQTTPuzzleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD1F641D7814FB0097D09E /* MQTTPuzzleModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,12 +62,13 @@
 		F43621D31D6DAFA100003DB5 /* MQTTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTManager.swift; sourceTree = "<group>"; };
 		F47022341D76B1DF00F1C6D0 /* MQTTInitialViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTInitialViewModel.swift; sourceTree = "<group>"; };
 		F49499111D78361500DF48DC /* MQTTGameRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTGameRoomViewController.swift; sourceTree = "<group>"; };
+		F49499131D789B5A00DF48DC /* MQTTGameRoomViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTGameRoomViewModel.swift; sourceTree = "<group>"; };
 		F4FD1F5A1D76E1AF0097D09E /* MQTTRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTRoomViewController.swift; sourceTree = "<group>"; };
 		F4FD1F5C1D76E2C70097D09E /* MQTTRoomViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTRoomViewModel.swift; sourceTree = "<group>"; };
 		F4FD1F5E1D7743CF0097D09E /* MQTTRoomListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTRoomListViewModel.swift; sourceTree = "<group>"; };
 		F4FD1F601D7743DE0097D09E /* MQTTRoomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTRoomListViewController.swift; sourceTree = "<group>"; };
 		F4FD1F621D77675E0097D09E /* MessageModelPropagateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageModelPropagateProtocol.swift; sourceTree = "<group>"; };
-		F4FD1F641D7814FB0097D09E /* PuzzleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleModel.swift; sourceTree = "<group>"; };
+		F4FD1F641D7814FB0097D09E /* MQTTPuzzleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTPuzzleModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 				F47022341D76B1DF00F1C6D0 /* MQTTInitialViewModel.swift */,
 				F4FD1F5C1D76E2C70097D09E /* MQTTRoomViewModel.swift */,
 				F4FD1F5E1D7743CF0097D09E /* MQTTRoomListViewModel.swift */,
+				F49499131D789B5A00DF48DC /* MQTTGameRoomViewModel.swift */,
 			);
 			name = "View Models";
 			sourceTree = "<group>";
@@ -211,7 +214,7 @@
 		F4FD1F661D7815000097D09E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F4FD1F641D7814FB0097D09E /* PuzzleModel.swift */,
+				F4FD1F641D7814FB0097D09E /* MQTTPuzzleModel.swift */,
 			);
 			name = Models;
 			path = ..;
@@ -403,11 +406,12 @@
 				F4FD1F631D77675E0097D09E /* MessageModelPropagateProtocol.swift in Sources */,
 				F4FD1F611D7743DE0097D09E /* MQTTRoomListViewController.swift in Sources */,
 				F4FD1F5B1D76E1AF0097D09E /* MQTTRoomViewController.swift in Sources */,
-				F4FD1F651D7814FB0097D09E /* PuzzleModel.swift in Sources */,
+				F4FD1F651D7814FB0097D09E /* MQTTPuzzleModel.swift in Sources */,
 				F4FD1F5D1D76E2C70097D09E /* MQTTRoomViewModel.swift in Sources */,
 				F43621AC1D6DAE3000003DB5 /* MQTTCodenames.xcdatamodeld in Sources */,
 				2EC0B92E7B4A2A3B7E75266C /* GE.plist in Sources */,
 				F4FD1F5F1D7743CF0097D09E /* MQTTRoomListViewModel.swift in Sources */,
+				F49499141D789B5A00DF48DC /* MQTTGameRoomViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

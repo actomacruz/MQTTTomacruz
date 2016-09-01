@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PuzzleModel {
+struct MQTTPuzzleModel {
     
     private var blueTeamCombinations: [Int]
     private var redTeamCombinations: [Int]

@@ -11,7 +11,7 @@ import ReactiveCocoa
 
 struct MQTTInitialViewModel {
     
-    var mqttManager: MQTTManager?
+    private var mqttManager: MQTTManager?
     private let createdTopic: String?
     
     init(manager: MQTTManager?) {

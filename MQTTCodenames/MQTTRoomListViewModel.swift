@@ -12,8 +12,8 @@ import enum Result.NoError
 
 struct MQTTRoomListViewModel {
     
-    var mqttManager: MQTTManager?
     var roomListArray: MutableProperty<[String]>
+    private var mqttManager: MQTTManager?
     
     init(manager: MQTTManager?) {
         mqttManager = manager

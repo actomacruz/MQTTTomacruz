@@ -527,14 +527,19 @@
                                                 <rect key="frame" x="172" y="395" width="188" height="31"/>
                                             </slider>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your word here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ARh-do-4FX">
-                                                <rect key="frame" x="180" y="461" width="178" height="30"/>
+                                                <rect key="frame" x="180" y="445" width="178" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dn-Eh-zzx">
+                                                <rect key="frame" x="244.5" y="483" width="49" height="30"/>
+                                                <state key="normal" title="Submit"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="ARh-do-4FX" firstAttribute="top" secondItem="5o4-if-oGX" secondAttribute="bottom" constant="36" id="7fb-z9-oKm"/>
+                                            <constraint firstItem="9dn-Eh-zzx" firstAttribute="centerX" secondItem="ARh-do-4FX" secondAttribute="centerX" id="1wj-Eo-IFF"/>
+                                            <constraint firstItem="ARh-do-4FX" firstAttribute="top" secondItem="5o4-if-oGX" secondAttribute="bottom" constant="20" id="7fb-z9-oKm"/>
                                             <constraint firstAttribute="trailing" secondItem="lNC-To-v0U" secondAttribute="trailing" constant="8" id="8D9-DE-Uaa"/>
                                             <constraint firstItem="cXn-iQ-fhg" firstAttribute="leading" secondItem="0Ve-ku-frp" secondAttribute="leading" constant="8" id="DWQ-Q4-yKT"/>
                                             <constraint firstItem="drq-fk-TJN" firstAttribute="top" secondItem="cXn-iQ-fhg" secondAttribute="bottom" constant="2" id="Dyx-a9-p78"/>
@@ -547,6 +552,7 @@
                                             <constraint firstItem="S6k-3X-ffI" firstAttribute="top" secondItem="drq-fk-TJN" secondAttribute="bottom" constant="3" id="h4a-l1-Gvi"/>
                                             <constraint firstItem="lNC-To-v0U" firstAttribute="top" secondItem="S6k-3X-ffI" secondAttribute="bottom" constant="8" id="k2N-Ij-gxM"/>
                                             <constraint firstItem="drq-fk-TJN" firstAttribute="leading" secondItem="cXn-iQ-fhg" secondAttribute="leading" id="kO2-uo-K2e"/>
+                                            <constraint firstItem="9dn-Eh-zzx" firstAttribute="top" secondItem="ARh-do-4FX" secondAttribute="bottom" constant="8" id="m0b-CI-eIa"/>
                                             <constraint firstItem="5o4-if-oGX" firstAttribute="leading" secondItem="g6Y-ps-0jZ" secondAttribute="trailing" constant="16" id="mxu-jy-sEX"/>
                                             <constraint firstItem="5o4-if-oGX" firstAttribute="top" secondItem="lNC-To-v0U" secondAttribute="bottom" constant="44" id="tfn-gf-yj0"/>
                                             <constraint firstItem="lNC-To-v0U" firstAttribute="leading" secondItem="0Ve-ku-frp" secondAttribute="leading" constant="8" id="v3p-nK-TTj"/>
