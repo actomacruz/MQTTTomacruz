@@ -32,11 +32,11 @@ struct MQTTRoomViewModel: MessageModelPropagateProtocol {
         (modelSignal, modelObserver) = Signal<String, NoError>.pipe()
         mqttManager?.messageSignal.observeNext { next in
             if (!(next.hasPrefix(MessageDefaults.CreateRoomMessage) || next.hasPrefix(MessageDefaults.KickRoomMessage) || next.hasPrefix(MessageDefaults.RoleAssignMessage) || next.hasPrefix(MessageDefaults.StartGameMessage))) {
-                if (next.hasSuffix(MessageDefaults.JoinRoomMessage)) {
+                if (next.rangeOfString(MessageDefaults.JoinRoomMessage) != nil) {
                     let clientId = next.componentsSeparatedByString(" with ID ")[1]
                     self.playerIdArray.value.append(clientId)
                 }
-                else if (next.hasSuffix(MessageDefaults.LeaveRoomMessage)) {
+                else if (next.rangeOfString(MessageDefaults.LeaveRoomMessage) != nil) {
                     let clientId = next.componentsSeparatedByString(" with ID ")[1]
                     self.playerIdArray.value.removeAtIndex(self.playerIdArray.value.indexOf(clientId)!)
                 }
@@ -112,7 +112,7 @@ struct MQTTRoomViewModel: MessageModelPropagateProtocol {
     }
     
     func roomName() -> String? {
-        return mqttManager?.clientIdPid.componentsSeparatedByString("-")[1]
+        return createdOrJoinedTopic!.componentsSeparatedByString("CocoaMQTT-")[1]
     }
     
     func gameRoomViewModel() -> MQTTGameRoomViewModel? {
