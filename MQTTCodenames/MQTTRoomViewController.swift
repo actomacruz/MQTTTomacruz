@@ -35,8 +35,8 @@ class MQTTRoomViewController: UIViewController, UIAlertViewDelegate {
         self.startGameButton.hidden = !(self.viewModel!.roomCreator)
         self.startGameButton.enabled = false
         if (self.viewModel!.roomCreator) {
-            self.viewModel?.playerCount.signal.observeNext { [unowned self] next in
-                if (next >= 4) {
+            self.viewModel?.playerIdArray.signal.observeNext { [unowned self] next in
+                if (next.count >= 4) {
                     self.startGameButton.enabled = true
                 }
                 else {
@@ -47,7 +47,7 @@ class MQTTRoomViewController: UIViewController, UIAlertViewDelegate {
     }
     
     @IBAction func didTapStartGame(sender: AnyObject) {
-        print("Start Game")
+        self.viewModel?.startGame()
     }
     
     @IBAction func didTapLeaveRoom(sender: AnyObject) {
