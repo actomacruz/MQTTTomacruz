@@ -16,7 +16,7 @@ class MQTTRoomListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel?.modelSignal.observeNext { next in
+        self.viewModel?.roomListArray.signal.observeNext { next in
             self.tableView.reloadData()
         }
     }
@@ -26,7 +26,7 @@ class MQTTRoomListViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = self.viewModel?.roomListArray.count else {
+        guard let count = self.viewModel?.roomListArray.value.count else {
             return 0
         }
         return count
@@ -35,7 +35,7 @@ class MQTTRoomListViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCellWithIdentifier("RoomListCellIdentifier") {
             cell.textLabel?.adjustsFontSizeToFitWidth = true
-            var roomName: String? = self.viewModel?.roomListArray[indexPath.row] as? String
+            var roomName: String? = self.viewModel?.roomListArray.value[indexPath.row]
             roomName = roomName?.componentsSeparatedByString("CocoaMQTT-")[1]
             cell.textLabel?.text = "Room " + roomName!
             return cell

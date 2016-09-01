@@ -10,22 +10,18 @@ import Foundation
 import ReactiveCocoa
 import enum Result.NoError
 
-struct MQTTRoomListViewModel: MessageModelPropagateProtocol {
+struct MQTTRoomListViewModel {
     
     var mqttManager: MQTTManager?
-    var roomListArray = NSMutableArray()
-    
-    var modelSignal: Signal<String, NoError>
-    var modelObserver: Observer<String, NoError>
+    var roomListArray: MutableProperty<[String]>
     
     init(manager: MQTTManager?) {
         mqttManager = manager
-        (modelSignal, modelObserver) = Signal<String, NoError>.pipe()
+        roomListArray = MutableProperty<[String]>([String]())
         mqttManager?.subscribe(MessageDefaults.TopicRoot + "/+")
         mqttManager?.messageSignal.observeNext { next in
             if (next.hasPrefix(MessageDefaults.CreateRoomMessage)) {
-                self.roomListArray.addObject(next)
-                self.modelObserver.sendNext("")
+                self.roomListArray.value.append(next)
             }
         }
     }
@@ -35,7 +31,7 @@ struct MQTTRoomListViewModel: MessageModelPropagateProtocol {
     }
     
     func roomViewModel(selectedRoom: Int, roomCreator: Bool) -> MQTTRoomViewModel {
-        let roomName: String? = roomListArray[selectedRoom] as? String
+        let roomName: String? = roomListArray.value[selectedRoom]
         let topic = MessageDefaults.TopicRoot + "/" + (roomName?.componentsSeparatedByString(" - ")[1])!
         return MQTTRoomViewModel.init(topic: topic, manager: mqttManager, creator: roomCreator)
     }
