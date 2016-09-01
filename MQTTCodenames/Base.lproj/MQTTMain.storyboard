@@ -536,6 +536,16 @@
                                                 <rect key="frame" x="244.5" y="483" width="49" height="30"/>
                                                 <state key="normal" title="Submit"/>
                                             </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XnA-vg-YnM">
+                                                <rect key="frame" x="135" y="8" width="223" height="61"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="223" id="Ese-oD-Lq0"/>
+                                                    <constraint firstAttribute="height" constant="61" id="V9y-Qk-ORn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -543,6 +553,7 @@
                                             <constraint firstItem="ARh-do-4FX" firstAttribute="top" secondItem="5o4-if-oGX" secondAttribute="bottom" constant="20" id="7fb-z9-oKm"/>
                                             <constraint firstAttribute="trailing" secondItem="lNC-To-v0U" secondAttribute="trailing" constant="8" id="8D9-DE-Uaa"/>
                                             <constraint firstItem="cXn-iQ-fhg" firstAttribute="leading" secondItem="0Ve-ku-frp" secondAttribute="leading" constant="8" id="DWQ-Q4-yKT"/>
+                                            <constraint firstAttribute="trailing" secondItem="XnA-vg-YnM" secondAttribute="trailing" constant="17" id="Dta-gT-vbn"/>
                                             <constraint firstItem="drq-fk-TJN" firstAttribute="top" secondItem="cXn-iQ-fhg" secondAttribute="bottom" constant="2" id="Dyx-a9-p78"/>
                                             <constraint firstItem="cXn-iQ-fhg" firstAttribute="top" secondItem="0Ve-ku-frp" secondAttribute="top" constant="14" id="Lw1-GZ-Djr"/>
                                             <constraint firstAttribute="bottom" secondItem="g6Y-ps-0jZ" secondAttribute="bottom" constant="20" id="S9j-0W-2PB"/>
@@ -574,6 +585,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PbX-vi-EMG" firstAttribute="top" secondItem="gje-6e-z6k" secondAttribute="bottom" id="RQW-iT-kIA"/>
+                            <constraint firstItem="XnA-vg-YnM" firstAttribute="top" secondItem="eAI-Gh-7gJ" secondAttribute="bottom" constant="8" id="czx-vl-iyn"/>
                             <constraint firstItem="gje-6e-z6k" firstAttribute="top" secondItem="eAI-Gh-7gJ" secondAttribute="bottom" id="mwW-Ku-Y5F"/>
                             <constraint firstAttribute="trailing" secondItem="gje-6e-z6k" secondAttribute="trailing" id="qap-P2-cRA"/>
                             <constraint firstItem="gje-6e-z6k" firstAttribute="leading" secondItem="3rV-oq-hq5" secondAttribute="leading" id="wL4-YF-UcV"/>
@@ -591,6 +603,7 @@
                         <outlet property="submitButton" destination="9dn-Eh-zzx" id="xKW-bq-9SR"/>
                         <outlet property="teamLabel" destination="drq-fk-TJN" id="2a5-zv-faf"/>
                         <outlet property="textField" destination="ARh-do-4FX" id="m5s-4T-jDV"/>
+                        <outlet property="textView" destination="XnA-vg-YnM" id="1Bw-sD-78k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TH5-xY-BjU" userLabel="First Responder" sceneMemberID="firstResponder"/>

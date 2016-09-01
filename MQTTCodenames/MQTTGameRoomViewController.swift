@@ -15,6 +15,7 @@ class MQTTGameRoomViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var buttonView: UIView!
+    @IBOutlet weak var textView: UITextView!
     
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var teamLabel: UILabel!
@@ -45,6 +46,33 @@ class MQTTGameRoomViewController: UIViewController {
             self.patternImageView.hidden = true
             self.slider.hidden = true
         }
+        self.viewModel?.determineFirstTurn()
+        
+        self.viewModel?.modelSignal.observeNext { [weak self] next in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.textView.text = weakSelf.textView.text + "\n" + next
+        }
+        
+        self.viewModel?.turn.signal.observeNext { [weak self] next in
+            guard let weakSelf = self else {
+                return
+            }
+            if (next) {
+                weakSelf.buttonView.userInteractionEnabled = true
+                weakSelf.submitButton.enabled = true
+                weakSelf.textField.enabled = true
+                weakSelf.slider.enabled = true
+            }
+            else {
+                weakSelf.buttonView.userInteractionEnabled = false
+                weakSelf.submitButton.enabled = false
+                weakSelf.textField.enabled = false
+                weakSelf.slider.enabled = false
+            }
+        }
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
