@@ -113,6 +113,12 @@ class MQTTGameRoomViewModel: MessageModelPropagateProtocol {
     
     private func isMyTurn() -> Bool {
         if currentTurn.team == team && currentTurn.role == role {
+            if role == Role.Describer {
+                mqttManager?.publish(gameTopic!, message: nickname! + " turn to Describe")
+            }
+            else {
+                mqttManager?.publish(gameTopic!, message: nickname! + " turn to Guess")
+            }
             return true
         }
         return false
@@ -149,6 +155,15 @@ class MQTTGameRoomViewModel: MessageModelPropagateProtocol {
     
     func wordAllowed(chosenWord: String) -> Bool {
         return !word.contains(chosenWord)
+    }
+    
+    func publish(text: String) {
+        if (role == Role.Describer) {
+            mqttManager?.publish(gameTopic!, message: nickname! + " describes " + text)
+        }
+        else {
+            mqttManager?.publish(gameTopic!, message: nickname! + " says " + text)
+        }
     }
     
 }

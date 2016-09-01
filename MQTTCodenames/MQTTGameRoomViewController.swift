@@ -99,13 +99,23 @@ class MQTTGameRoomViewController: UIViewController {
     }
     
     @IBAction func didTapSubmit(sender: AnyObject) {
+        let sliderValue = round(self.slider.value)
+        if (self.viewModel!.isDescriber()) {
+            self.viewModel?.publish(self.textField.text! + " " + String(sliderValue))
+            self.viewModel?.switchTurn()
+        }
+        else {
+            self.viewModel?.publish(self.textField.text!)
+        }
         self.textField.text = ""
-        //Tap Submit
     }
     
     @IBAction func didTapWordButton(sender: AnyObject) {
+        print("Tap Button")
+        if (!(self.viewModel!.isDescriber())) {
+            // check number of chosen words
+        }
         self.textField.text = ""
-        //Tap Submit
     }
     
     func keyboardWillShow(aNotification: NSNotification) {
