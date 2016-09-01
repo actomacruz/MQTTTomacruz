@@ -54,7 +54,15 @@ class MQTTGameRoomViewController: UIViewController {
             guard let weakSelf = self else {
                 return
             }
-            weakSelf.textView.text = weakSelf.textView.text + "\n" + next
+            if (next.hasPrefix(MessageDefaults.RemoveWordMessage)) {
+                
+            }
+            else if (next.hasPrefix(MessageDefaults.WinnerMessage)) {
+                
+            }
+            else {
+                weakSelf.textView.text = weakSelf.textView.text + "\n" + next
+            }
         }
         
         self.viewModel?.turn.signal.observeNext { [weak self] next in
@@ -110,7 +118,7 @@ class MQTTGameRoomViewController: UIViewController {
     }
     
     @IBAction func didTapSubmit(sender: AnyObject) {
-        let sliderValue = round(self.slider.value)
+        let sliderValue = Int(round(self.slider.value))
         if (self.viewModel!.isDescriber()) {
             self.viewModel?.publish(self.textField.text! + " " + String(sliderValue))
             self.viewModel?.switchTurn()
@@ -123,10 +131,8 @@ class MQTTGameRoomViewController: UIViewController {
     }
     
     @IBAction func didTapWordButton(sender: AnyObject) {
-        print("Tap Button")
-        if (!(self.viewModel!.isDescriber())) {
-            // check number of chosen words
-        }
+        let button = sender as! UIButton
+        self.viewModel?.chooseWord(button.tag - 1)
     }
     
     func keyboardWillShow(aNotification: NSNotification) {

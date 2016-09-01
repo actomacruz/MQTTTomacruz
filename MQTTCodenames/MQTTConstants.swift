@@ -18,6 +18,9 @@ enum MessageDefaults {
     static let RoleAssignMessage = "Role Assign"
     static let StartGameMessage = "Start Game"
     static let SwitchTurnMessage = "Switch Turn"
+    static let PointAddedMessage = "Point Added"
+    static let WinnerMessage = "Winner Is"
+    static let RemoveWordMessage = "Remove Word"
 }
 
 enum Keys {

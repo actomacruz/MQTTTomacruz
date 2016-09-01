@@ -17,6 +17,8 @@ class MQTTGameRoomViewModel: MessageModelPropagateProtocol {
     
     private var team: Team
     private var role: Role
+    private var numOfChosenWords: Int
+    private var maxWordsToChoose: Int
     private let nickname: String?
     private let gameTopic: String?
     private var mqttManager: MQTTManager?
@@ -35,6 +37,8 @@ class MQTTGameRoomViewModel: MessageModelPropagateProtocol {
         role = randomRole
         points = MutableProperty<Int>(0)
         turn = MutableProperty<Bool>(false)
+        numOfChosenWords = 0
+        maxWordsToChoose = 1
         
         let firstTurn = pattern["firstTurn"] as! Int
         if (firstTurn == Team.Red.rawValue) {
@@ -74,6 +78,28 @@ class MQTTGameRoomViewModel: MessageModelPropagateProtocol {
                     weakSelf.turn.value = false
                 }
             }
+            
+            if (next.hasPrefix(MessageDefaults.PointAddedMessage)) {
+                let teamText = next.componentsSeparatedByString(" to ")[1]
+                var currentTeam = Team.Red
+                var teamTotalPoints = (weakSelf.pattern["redTeam"] as! [Int]).count
+                if teamText == "Blue" {
+                    currentTeam = Team.Blue
+                    teamTotalPoints = (weakSelf.pattern["blueTeam"] as! [Int]).count
+                }
+                if currentTeam == weakSelf.team {
+                    weakSelf.points.value = weakSelf.points.value + 1
+                    if (weakSelf.points.value >= teamTotalPoints) {
+                        weakSelf.mqttManager?.publish(weakSelf.gameTopic!, message: MessageDefaults.WinnerMessage + " " + weakSelf.teamName())
+                    }
+                }
+            }
+            
+            if (next.rangeOfString(" describes ") != nil) {
+                let describerMessage = next.componentsSeparatedByString(" describes ")[1]
+                let maxWords = Int(describerMessage.componentsSeparatedByString(" ")[1])
+                weakSelf.maxWordsToChoose = maxWords! + 1
+            }
         }
     }
     
@@ -89,6 +115,7 @@ class MQTTGameRoomViewModel: MessageModelPropagateProtocol {
     }
     
     func switchTurn() {
+        numOfChosenWords = 0
         if (currentTurn.role == Role.Describer) {
             currentTurn = (currentTurn.team, Role.Guesser)
         }
@@ -163,6 +190,29 @@ class MQTTGameRoomViewModel: MessageModelPropagateProtocol {
         }
         else {
             mqttManager?.publish(gameTopic!, message: nickname! + " says " + text)
+        }
+    }
+    
+    func chooseWord(index: Int) {
+        numOfChosenWords = numOfChosenWords + 1
+        mqttManager?.publish(gameTopic!, message: nickname! + " chooses " + self.wordForIndex(index))
+        if ((pattern["redTeam"] as! [Int]).contains(index)) {
+            mqttManager?.publish(gameTopic!, message: MessageDefaults.PointAddedMessage + " to Red")
+        }
+        else if ((pattern["blueTeam"] as! [Int]).contains(index)) {
+            mqttManager?.publish(gameTopic!, message: MessageDefaults.PointAddedMessage + " to Blue")
+        }
+        else if ((pattern["blackSpot"] as! Int) == index) {
+            var winnerTeam = "Red"
+            if (team == Team.Red) {
+                winnerTeam = "Blue"
+            }
+            mqttManager?.publish(gameTopic!, message: MessageDefaults.WinnerMessage + " " + winnerTeam)
+        }
+        mqttManager?.publish(gameTopic!, message: nickname! + " chooses " + self.wordForIndex(index))
+        mqttManager?.publish(gameTopic!, message: MessageDefaults.RemoveWordMessage + " - " + String(index))
+        if (numOfChosenWords >= maxWordsToChoose) {
+            self.switchTurn()
         }
     }
     
