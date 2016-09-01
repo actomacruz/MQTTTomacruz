@@ -43,6 +43,10 @@ struct MQTTGameRoomViewModel {
         nickname = NSUserDefaults.standardUserDefaults().objectForKey(Keys.Nickname) as? String
     }
     
+    func nameDisplay() -> String {
+        return nickname!
+    }
+    
     func patternImageName() -> String {
         return (pattern["image"] as! String)
     }

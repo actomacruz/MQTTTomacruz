@@ -32,6 +32,9 @@ class MQTTRoomViewController: UIViewController, UIAlertViewDelegate {
                 alertView.show()
             }
         }
+        self.viewModel?.modelSignal.observeCompleted { [unowned self] in
+            self.performSegueWithIdentifier("PresentGameRoom", sender: self)
+        }
         self.startGameButton.hidden = !(self.viewModel!.roomCreator)
         self.startGameButton.enabled = false
         if (self.viewModel!.roomCreator) {
@@ -57,6 +60,20 @@ class MQTTRoomViewController: UIViewController, UIAlertViewDelegate {
         }
         else {
             self.performSegueWithIdentifier("UnwindForInitial", sender: self)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        switch (identifier) {
+            case "PresentGameRoom":
+            let gameRoomViewController = segue.destinationViewController as! MQTTGameRoomViewController
+            gameRoomViewController.viewModel = self.viewModel?.gameRoomViewModel()
+            
+            default: break
         }
     }
     

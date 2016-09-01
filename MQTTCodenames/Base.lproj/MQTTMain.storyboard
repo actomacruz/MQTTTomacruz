@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mig-zj-IXf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -189,6 +189,7 @@
                         <outlet property="startGameButton" destination="MqZ-zd-nan" id="VJd-Kk-C0j"/>
                         <outlet property="statusTextView" destination="FD5-PL-Xiq" id="QA2-Sy-b0h"/>
                         <segue destination="WAA-eK-Dcs" kind="unwind" identifier="UnwindForInitial" unwindAction="unwindSegueForRoom:" id="pWu-gR-clo"/>
+                        <segue destination="mig-zj-IXf" kind="presentation" identifier="PresentGameRoom" id="t51-gL-Ep2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q05-Yu-VJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -581,7 +582,15 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="buttonView" destination="lNC-To-v0U" id="4ES-x2-VjC"/>
+                        <outlet property="nicknameLabel" destination="cXn-iQ-fhg" id="sN1-mQ-sXw"/>
+                        <outlet property="patternImageView" destination="g6Y-ps-0jZ" id="YdV-DT-g65"/>
+                        <outlet property="pointLabel" destination="S6k-3X-ffI" id="ios-N6-n2r"/>
                         <outlet property="scrollView" destination="gje-6e-z6k" id="tRB-kj-deR"/>
+                        <outlet property="slider" destination="5o4-if-oGX" id="V9V-o9-38K"/>
+                        <outlet property="submitButton" destination="9dn-Eh-zzx" id="xKW-bq-9SR"/>
+                        <outlet property="teamLabel" destination="drq-fk-TJN" id="2a5-zv-faf"/>
+                        <outlet property="textField" destination="ARh-do-4FX" id="m5s-4T-jDV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TH5-xY-BjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
