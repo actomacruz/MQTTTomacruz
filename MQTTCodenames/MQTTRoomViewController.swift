@@ -34,7 +34,7 @@ class MQTTRoomViewController: UIViewController, UIAlertViewDelegate {
                 return
             }
             if (!(weakSelf.viewModel!.roomCreator)) {
-                let alertView = UIAlertView.init(title: "Oops", message: "Room creator has left the room", delegate: self, cancelButtonTitle: "OK")
+                let alertView = UIAlertView.init(title: "Oops", message: "Room creator has left the room", delegate: weakSelf, cancelButtonTitle: "OK")
                 alertView.show()
             }
         }

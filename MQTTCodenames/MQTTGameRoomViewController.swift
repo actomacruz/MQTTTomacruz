@@ -83,10 +83,10 @@ class MQTTGameRoomViewController: UIViewController, UIAlertViewDelegate {
                 weakSelf.textField.enabled = true
                 weakSelf.slider.enabled = true
                 if (weakSelf.textField.text?.characters.count > 0) {
-                    weakSelf.submitButton.enabled = false
+                    weakSelf.submitButton.enabled = true
                 }
                 else {
-                    weakSelf.submitButton.enabled = true
+                    weakSelf.submitButton.enabled = false
                 }
             }
             else {
