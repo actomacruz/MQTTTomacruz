@@ -28,9 +28,7 @@ struct MQTTInitialViewModel {
     }
     
     func roomViewModel(roomCreator: Bool) -> MQTTRoomViewModel {
-        var mqttRoomViewModel = MQTTRoomViewModel.init(topic: createdTopic, manager: mqttManager)
-        mqttRoomViewModel.roomCreator = roomCreator
-        return mqttRoomViewModel
+        return MQTTRoomViewModel.init(topic: createdTopic, manager: mqttManager, creator: roomCreator)
     }
     
     func roomListViewModel() -> MQTTRoomListViewModel {

@@ -33,9 +33,7 @@ struct MQTTRoomListViewModel: MessageModelPropagateProtocol {
     func roomViewModel(selectedRoom: Int, roomCreator: Bool) -> MQTTRoomViewModel {
         let roomName: String? = roomListArray[selectedRoom] as? String
         let topic = MessageDefaults.TopicRoot + "/" + (roomName?.componentsSeparatedByString(" - ")[1])!
-        var mqttRoomViewModel = MQTTRoomViewModel.init(topic: topic, manager: mqttManager)
-        mqttRoomViewModel.roomCreator = roomCreator
-        return mqttRoomViewModel
+        return MQTTRoomViewModel.init(topic: topic, manager: mqttManager, creator: roomCreator)
     }
     
 }
