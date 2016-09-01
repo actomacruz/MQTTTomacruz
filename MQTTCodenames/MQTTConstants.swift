@@ -37,7 +37,7 @@ struct SampleData {
                     "Chick", "Gas", "Wake", "Nail", "Scorpion"]
     
     var samplePattern = [
-                            "image": "pattern_1.png",
+                            "image": "pattern_1",
                             "redTeam": [1, 4, 9, 10, 16, 17, 19, 21, 24],
                             "blueTeam": [2, 3, 6, 8, 14, 15, 22, 25],
                             "blackSpot": 12
