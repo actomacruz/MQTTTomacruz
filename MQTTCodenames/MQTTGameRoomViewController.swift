@@ -58,7 +58,8 @@ class MQTTGameRoomViewController: UIViewController, UIAlertViewDelegate {
                 let index = Int(next.componentsSeparatedByString(" - ")[1])! + 1
                 _ = weakSelf.buttonArray?.filter {
                     if ($0.tag == index) {
-                        $0.removeFromSuperview()
+                        $0.alpha = 0
+                        $0.enabled = false
                         return true
                     }
                     return false
@@ -89,6 +90,13 @@ class MQTTGameRoomViewController: UIViewController, UIAlertViewDelegate {
                 weakSelf.textField.enabled = false
                 weakSelf.slider.enabled = false
             }
+        }
+        
+        self.viewModel?.points.signal.observeNext { [weak self] next in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.pointLabel.text = "Points: " + String(next)
         }
         
         if (self.viewModel!.isDescriber()) {

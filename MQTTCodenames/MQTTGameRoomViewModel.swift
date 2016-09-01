@@ -209,7 +209,6 @@ class MQTTGameRoomViewModel: MessageModelPropagateProtocol {
             }
             mqttManager?.publish(gameTopic!, message: MessageDefaults.WinnerMessage + " " + winnerTeam)
         }
-        mqttManager?.publish(gameTopic!, message: nickname! + " chooses " + self.wordForIndex(index))
         mqttManager?.publish(gameTopic!, message: MessageDefaults.RemoveWordMessage + " - " + String(index))
         if (numOfChosenWords >= maxWordsToChoose) {
             self.switchTurn()
