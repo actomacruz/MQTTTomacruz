@@ -66,7 +66,7 @@ class MQTTGameRoomViewController: UIViewController, UIAlertViewDelegate {
                 }
             }
             else if (next.hasPrefix(MessageDefaults.WinnerMessage)) {
-                let alertView = UIAlertView.init(title: "Winner", message: next, delegate: self, cancelButtonTitle: "OK")
+                let alertView = UIAlertView.init(title: "Winner", message: next, delegate: weakSelf, cancelButtonTitle: "OK")
                 alertView.show()
             }
             else {
@@ -80,9 +80,14 @@ class MQTTGameRoomViewController: UIViewController, UIAlertViewDelegate {
             }
             if (next) {
                 weakSelf.buttonView.userInteractionEnabled = true
-                weakSelf.submitButton.enabled = true
                 weakSelf.textField.enabled = true
                 weakSelf.slider.enabled = true
+                if (weakSelf.textField.text?.characters.count > 0) {
+                    weakSelf.submitButton.enabled = false
+                }
+                else {
+                    weakSelf.submitButton.enabled = true
+                }
             }
             else {
                 weakSelf.buttonView.userInteractionEnabled = false
@@ -147,8 +152,10 @@ class MQTTGameRoomViewController: UIViewController, UIAlertViewDelegate {
     }
     
     @IBAction func didTapWordButton(sender: AnyObject) {
-        let button = sender as! UIButton
-        self.viewModel?.chooseWord(button.tag - 1)
+        if (!(self.viewModel!.isDescriber())) {
+            let button = sender as! UIButton
+            self.viewModel?.chooseWord(button.tag - 1)
+        }
     }
     
     func keyboardWillShow(aNotification: NSNotification) {
