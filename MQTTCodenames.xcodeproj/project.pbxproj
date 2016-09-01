@@ -20,6 +20,7 @@
 		F43621D21D6DAF7800003DB5 /* MQTTInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43621D11D6DAF7800003DB5 /* MQTTInitialViewController.swift */; };
 		F43621D41D6DAFA100003DB5 /* MQTTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43621D31D6DAFA100003DB5 /* MQTTManager.swift */; };
 		F47022351D76B1DF00F1C6D0 /* MQTTInitialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47022341D76B1DF00F1C6D0 /* MQTTInitialViewModel.swift */; };
+		F49499121D78361500DF48DC /* MQTTGameRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49499111D78361500DF48DC /* MQTTGameRoomViewController.swift */; };
 		F4FD1F5B1D76E1AF0097D09E /* MQTTRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD1F5A1D76E1AF0097D09E /* MQTTRoomViewController.swift */; };
 		F4FD1F5D1D76E2C70097D09E /* MQTTRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD1F5C1D76E2C70097D09E /* MQTTRoomViewModel.swift */; };
 		F4FD1F5F1D7743CF0097D09E /* MQTTRoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD1F5E1D7743CF0097D09E /* MQTTRoomListViewModel.swift */; };
@@ -59,6 +60,7 @@
 		F43621D11D6DAF7800003DB5 /* MQTTInitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTInitialViewController.swift; sourceTree = "<group>"; };
 		F43621D31D6DAFA100003DB5 /* MQTTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTManager.swift; sourceTree = "<group>"; };
 		F47022341D76B1DF00F1C6D0 /* MQTTInitialViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTInitialViewModel.swift; sourceTree = "<group>"; };
+		F49499111D78361500DF48DC /* MQTTGameRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTGameRoomViewController.swift; sourceTree = "<group>"; };
 		F4FD1F5A1D76E1AF0097D09E /* MQTTRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTRoomViewController.swift; sourceTree = "<group>"; };
 		F4FD1F5C1D76E2C70097D09E /* MQTTRoomViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTRoomViewModel.swift; sourceTree = "<group>"; };
 		F4FD1F5E1D7743CF0097D09E /* MQTTRoomListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQTTRoomListViewModel.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				F43621D11D6DAF7800003DB5 /* MQTTInitialViewController.swift */,
 				F4FD1F5A1D76E1AF0097D09E /* MQTTRoomViewController.swift */,
 				F4FD1F601D7743DE0097D09E /* MQTTRoomListViewController.swift */,
+				F49499111D78361500DF48DC /* MQTTGameRoomViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				F43621D01D6DAF6D00003DB5 /* MQTTConstants.swift in Sources */,
 				F43621CC1D6DAF1300003DB5 /* MQTTAppDelegate.swift in Sources */,
 				F43621D21D6DAF7800003DB5 /* MQTTInitialViewController.swift in Sources */,
+				F49499121D78361500DF48DC /* MQTTGameRoomViewController.swift in Sources */,
 				F4FD1F631D77675E0097D09E /* MessageModelPropagateProtocol.swift in Sources */,
 				F4FD1F611D7743DE0097D09E /* MQTTRoomListViewController.swift in Sources */,
 				F4FD1F5B1D76E1AF0097D09E /* MQTTRoomViewController.swift in Sources */,
