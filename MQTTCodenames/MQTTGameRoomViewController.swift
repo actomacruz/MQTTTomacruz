@@ -10,7 +10,7 @@ import UIKit
 import ReactiveCocoa
 import enum Result.NoError
 
-class MQTTGameRoomViewController: UIViewController {
+class MQTTGameRoomViewController: UIViewController, UIAlertViewDelegate {
 
     var viewModel: MQTTGameRoomViewModel?
     var buttonArray: [UIButton]?
@@ -55,10 +55,18 @@ class MQTTGameRoomViewController: UIViewController {
                 return
             }
             if (next.hasPrefix(MessageDefaults.RemoveWordMessage)) {
-                
+                let index = Int(next.componentsSeparatedByString(" - ")[1])! + 1
+                _ = weakSelf.buttonArray?.filter {
+                    if ($0.tag == index) {
+                        $0.removeFromSuperview()
+                        return true
+                    }
+                    return false
+                }
             }
             else if (next.hasPrefix(MessageDefaults.WinnerMessage)) {
-                
+                let alertView = UIAlertView.init(title: "Winner", message: next, delegate: self, cancelButtonTitle: "OK")
+                alertView.show()
             }
             else {
                 weakSelf.textView.text = weakSelf.textView.text + "\n" + next
@@ -144,6 +152,12 @@ class MQTTGameRoomViewController: UIViewController {
     func keyboardWillHide(aNotification: NSNotification) {
         let contentInsets = UIEdgeInsetsMake(self.scrollView.contentInset.top, 0.0, 0.0, 0.0)
         self.scrollView.contentInset = contentInsets;
+    }
+    
+    // Mark UIAlertViewDelegate
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        self.performSegueWithIdentifier("UnwindSegueForGame", sender: self)
     }
 
 }
