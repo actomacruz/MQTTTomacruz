@@ -68,10 +68,10 @@ class MQTTGameRoomViewModel: MessageModelPropagateProtocol {
                 }
                 weakSelf.currentTurn = (currentTeam, currentRole)
                 if (weakSelf.isMyTurn()) {
-                    weakSelf.turn = MutableProperty<Bool>(true)
+                    weakSelf.turn.value = true
                 }
                 else {
-                    weakSelf.turn = MutableProperty<Bool>(false)
+                    weakSelf.turn.value = false
                 }
             }
         }
@@ -80,11 +80,11 @@ class MQTTGameRoomViewModel: MessageModelPropagateProtocol {
     func determineFirstTurn() {
         let firstTurn = pattern["firstTurn"] as! Int
         if (firstTurn == team.rawValue && role == Role.Describer) {
-            turn = MutableProperty<Bool>(true)
+            turn.value = true
             mqttManager?.publish(gameTopic!, message: nickname! + " turn to Describe")
         }
         else {
-            turn = MutableProperty<Bool>(false)
+            turn.value = false
         }
     }
     
