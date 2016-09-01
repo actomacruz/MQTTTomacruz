@@ -58,11 +58,11 @@ struct MQTTRoomViewModel: MessageModelPropagateProtocol {
         }
         if (roomCreator) {
             mqttManager?.publish(topic, message: MessageDefaults.KickRoomMessage)
+            mqttManager?.publish(topic, message: "", retained: true)
         }
         else {
             mqttManager?.publish(topic, message: name + " " + MessageDefaults.LeaveRoomMessage)
         }
-        mqttManager?.publish(topic, message: "", retained: true)
         mqttManager?.unsubscribe(topic)
     }
     

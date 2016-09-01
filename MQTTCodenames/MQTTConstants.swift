@@ -20,3 +20,10 @@ enum MessageDefaults {
 enum Keys {
     static let Nickname = "nickname"
 }
+
+enum TeamHit: Int {
+    case Blue = 0
+    case Red
+    case Black
+    case NoTeam
+}
