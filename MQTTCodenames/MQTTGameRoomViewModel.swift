@@ -195,7 +195,7 @@ class MQTTGameRoomViewModel: MessageModelPropagateProtocol {
     
     func chooseWord(index: Int) {
         numOfChosenWords = numOfChosenWords + 1
-        mqttManager?.publish(gameTopic!, message: nickname! + " chooses " + self.wordForIndex(index))
+        mqttManager?.publish(gameTopic!, message: nickname! + " chooses " + self.wordForIndex(index - 1))
         if ((pattern["redTeam"] as! [Int]).contains(index)) {
             mqttManager?.publish(gameTopic!, message: MessageDefaults.PointAddedMessage + " to Red")
         }
