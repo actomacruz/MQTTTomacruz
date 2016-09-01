@@ -27,3 +27,20 @@ enum TeamHit: Int {
     case Black
     case NoTeam
 }
+
+struct SampleData {
+    
+    var wordList = ["Penguin", "Cycle", "Iron", "Knife", "Ball",
+                    "Moscow", "Laser", "Pole", "Missile", "Dinosaur",
+                    "Jack", "China", "Knight", "Dice", "Track",
+                    "Calf", "Mine", "Shadow", "Shop", "Cook",
+                    "Chick", "Gas", "Wake", "Nail", "Scorpion"]
+    
+    var samplePattern = [
+                            "image": "pattern_1.png",
+                            "redTeam": [1, 4, 9, 10, 16, 17, 19, 21, 24],
+                            "blueTeam": [2, 3, 6, 8, 14, 15, 22, 25],
+                            "blackSpot": 12
+                        ]
+    
+}
