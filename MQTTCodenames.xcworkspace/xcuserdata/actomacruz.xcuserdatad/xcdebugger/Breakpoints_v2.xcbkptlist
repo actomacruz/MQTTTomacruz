@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MQTTCodenames/MQTTRoomViewController.swift"
-            timestampString = "494450733.868996"
+            timestampString = "494451824.764119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
             <Locations>
@@ -116,12 +116,12 @@
                   moduleName = "MQTTCodenames"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/actomacruz/Desktop/Repositories/mqtt/MQTTCodenames/MQTTRoomViewController.swift"
-                  timestampString = "494451014.690274"
+                  timestampString = "494451825.908861"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "673">
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "645">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -131,12 +131,12 @@
                   moduleName = "MQTTCodenames"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/actomacruz/Desktop/Repositories/mqtt/MQTTCodenames/MQTTRoomViewController.swift"
-                  timestampString = "494451014.690442"
+                  timestampString = "494451825.908962"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "2741">
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "2840">
                </Location>
             </Locations>
          </BreakpointContent>

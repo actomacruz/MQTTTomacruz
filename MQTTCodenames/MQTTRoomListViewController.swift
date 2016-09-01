@@ -16,8 +16,11 @@ class MQTTRoomListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel?.roomListArray.signal.observeNext { [unowned self] next in
-            self.tableView.reloadData()
+        self.viewModel?.roomListArray.signal.observeNext { [weak self] next in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.tableView.reloadData()
         }
     }
     

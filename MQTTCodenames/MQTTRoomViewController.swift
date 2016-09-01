@@ -23,27 +23,39 @@ class MQTTRoomViewController: UIViewController, UIAlertViewDelegate {
             return
         }
         self.roomNameLabel.text = "Room " + roomName
-        self.viewModel?.modelSignal.observeNext { [unowned self] next in
-            self.statusTextView.text = self.statusTextView.text + "\n" + next
+        self.viewModel?.modelSignal.observeNext { [weak self] next in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.statusTextView.text = weakSelf.statusTextView.text + "\n" + next
         }
-        self.viewModel?.modelSignal.observeInterrupted { [unowned self] in
-            if (!(self.viewModel!.roomCreator)) {
+        self.viewModel?.modelSignal.observeInterrupted { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            if (!(weakSelf.viewModel!.roomCreator)) {
                 let alertView = UIAlertView.init(title: "Oops", message: "Room creator has left the room", delegate: self, cancelButtonTitle: "OK")
                 alertView.show()
             }
         }
-        self.viewModel?.modelSignal.observeCompleted { [unowned self] in
-            self.performSegueWithIdentifier("PresentGameRoom", sender: self)
+        self.viewModel?.modelSignal.observeCompleted { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.performSegueWithIdentifier("PresentGameRoom", sender: self)
         }
         self.startGameButton.hidden = !(self.viewModel!.roomCreator)
         self.startGameButton.enabled = false
         if (self.viewModel!.roomCreator) {
-            self.viewModel?.playerIdArray.signal.observeNext { [unowned self] next in
+            self.viewModel?.playerIdArray.signal.observeNext { [weak self] next in
+                guard let weakSelf = self else {
+                    return
+                }
                 if (next.count >= 4) {
-                    self.startGameButton.enabled = true
+                    weakSelf.startGameButton.enabled = true
                 }
                 else {
-                    self.startGameButton.enabled = false
+                    weakSelf.startGameButton.enabled = false
                 }
             }
         }
