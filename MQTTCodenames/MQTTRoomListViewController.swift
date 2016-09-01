@@ -21,6 +21,8 @@ class MQTTRoomListViewController: UITableViewController {
         }
     }
     
+    // Mark UITableViewDelegate and UITableViewDataSource
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }

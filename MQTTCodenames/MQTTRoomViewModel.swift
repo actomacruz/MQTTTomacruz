@@ -31,6 +31,7 @@ struct MQTTRoomViewModel: MessageModelPropagateProtocol {
                 self.modelObserver.sendNext(next)
             }
             else if (next.hasPrefix(MessageDefaults.KickRoomMessage)) {
+                self.mqttManager?.unsubscribe(self.createdOrJoinedTopic!)
                 self.modelObserver.sendInterrupted()
             }
         }

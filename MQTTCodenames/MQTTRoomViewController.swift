@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MQTTRoomViewController: UIViewController {
+class MQTTRoomViewController: UIViewController, UIAlertViewDelegate {
     
     var viewModel: MQTTRoomViewModel?
     @IBOutlet weak var roomNameLabel: UILabel!
@@ -27,10 +27,10 @@ class MQTTRoomViewController: UIViewController {
             self.statusTextView.text = self.statusTextView.text + "\n" + next
         }
         self.viewModel?.modelSignal.observeInterrupted {
-            self.dismissViewControllerAnimated(true, completion: { () -> Void in
-                let alertView = UIAlertView.init(title: "Oops", message: "Room creator has left the room", delegate: nil, cancelButtonTitle: "OK")
+            if (!(self.viewModel!.roomCreator)) {
+                let alertView = UIAlertView.init(title: "Oops", message: "Room creator has left the room", delegate: self, cancelButtonTitle: "OK")
                 alertView.show()
-            })
+            }
         }
         self.startGameButton.hidden = !((self.viewModel?.roomCreator)!)
     }
@@ -41,7 +41,18 @@ class MQTTRoomViewController: UIViewController {
     
     @IBAction func didTapLeaveRoom(sender: AnyObject) {
         self.viewModel?.leaveRoom()
-        self.dismissViewControllerAnimated(true, completion: nil)
+        if (self.viewModel!.roomCreator) {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        else {
+            self.performSegueWithIdentifier("UnwindForInitial", sender: self)
+        }
+    }
+    
+    // Mark UIAlertViewDelegate
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        self.performSegueWithIdentifier("UnwindForInitial", sender: self)
     }
     
 }

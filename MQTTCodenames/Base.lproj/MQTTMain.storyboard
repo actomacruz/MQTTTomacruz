@@ -82,6 +82,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="WAA-eK-Dcs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="279.5" y="202.5"/>
         </scene>
@@ -187,6 +188,7 @@
                         <outlet property="roomNameLabel" destination="qz7-cC-pe5" id="9eI-py-ygm"/>
                         <outlet property="startGameButton" destination="MqZ-zd-nan" id="VJd-Kk-C0j"/>
                         <outlet property="statusTextView" destination="FD5-PL-Xiq" id="QA2-Sy-b0h"/>
+                        <segue destination="WAA-eK-Dcs" kind="unwind" identifier="UnwindForInitial" unwindAction="unwindSegueForRoom:" id="pWu-gR-clo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q05-Yu-VJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -195,6 +197,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6xO-WR-4y8"/>
+        <segue reference="YxT-5M-FGr"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -41,6 +41,10 @@ class MQTTInitialViewController: UIViewController {
         self.performSegueWithIdentifier("PresentCreatedRoom", sender: self)
     }
     
+    @IBAction func unwindSegueForRoom(unwindSegue: UIStoryboardSegue) {
+        // Do nothing UnwindForInitial
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         guard let identifier = segue.identifier else {
             return
