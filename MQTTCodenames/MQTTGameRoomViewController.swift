@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ReactiveCocoa
+import enum Result.NoError
 
 class MQTTGameRoomViewController: UIViewController {
 
@@ -46,7 +48,6 @@ class MQTTGameRoomViewController: UIViewController {
             self.patternImageView.hidden = true
             self.slider.hidden = true
         }
-        self.viewModel?.determineFirstTurn()
         
         self.viewModel?.modelSignal.observeNext { [weak self] next in
             guard let weakSelf = self else {
@@ -73,6 +74,21 @@ class MQTTGameRoomViewController: UIViewController {
             }
         }
         
+        if (self.viewModel!.isDescriber()) {
+            let textFieldSignal = self.textField.rac_textSignal().toSignalProducer()
+                .flatMapError { error in
+                    return SignalProducer<AnyObject?, NoError>.empty
+                }
+                .map { (text) -> Bool in
+                    if let guardedText: String = text as? String {
+                        return (guardedText.characters.count > 0 && guardedText.rangeOfCharacterFromSet(NSCharacterSet.whitespaceCharacterSet()) == nil && self.viewModel!.wordAllowed(guardedText))
+                    }
+                    return false
+                }
+            DynamicProperty(object: self.submitButton, keyPath: "enabled") <~ textFieldSignal
+        }
+        
+        self.viewModel?.determineFirstTurn()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
@@ -80,6 +96,16 @@ class MQTTGameRoomViewController: UIViewController {
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    @IBAction func didTapSubmit(sender: AnyObject) {
+        self.textField.text = ""
+        //Tap Submit
+    }
+    
+    @IBAction func didTapWordButton(sender: AnyObject) {
+        self.textField.text = ""
+        //Tap Submit
     }
     
     func keyboardWillShow(aNotification: NSNotification) {

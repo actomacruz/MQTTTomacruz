@@ -535,6 +535,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dn-Eh-zzx">
                                                 <rect key="frame" x="244.5" y="483" width="49" height="30"/>
                                                 <state key="normal" title="Submit"/>
+                                                <connections>
+                                                    <action selector="didTapSubmit:" destination="mig-zj-IXf" eventType="touchUpInside" id="q0W-bJ-8PE"/>
+                                                </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XnA-vg-YnM">
                                                 <rect key="frame" x="135" y="8" width="223" height="61"/>

@@ -17,6 +17,7 @@ enum MessageDefaults {
     static let JoinRoomMessage = "Joined Room"
     static let RoleAssignMessage = "Role Assign"
     static let StartGameMessage = "Start Game"
+    static let SwitchTurnMessage = "Switch Turn"
 }
 
 enum Keys {
