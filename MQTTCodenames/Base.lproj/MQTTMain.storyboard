@@ -162,9 +162,9 @@
                                     <action selector="didTapStartGame:" destination="Lvl-FK-00P" eventType="touchUpInside" id="RwM-8u-hgN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kf4-wk-W2s">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kf4-wk-W2s">
                                 <rect key="frame" x="245" y="252" width="80" height="30"/>
-                                <state key="normal" title="Leave Roon"/>
+                                <state key="normal" title="Leave Room"/>
                                 <connections>
                                     <action selector="didTapLeaveRoom:" destination="Lvl-FK-00P" eventType="touchUpInside" id="JPA-MD-U60"/>
                                 </connections>

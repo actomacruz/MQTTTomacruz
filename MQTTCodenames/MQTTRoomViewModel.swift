@@ -10,7 +10,7 @@ import Foundation
 import ReactiveCocoa
 import enum Result.NoError
 
-struct MQTTRoomViewModel: MessageModelPropagateProtocol {
+class MQTTRoomViewModel: MessageModelPropagateProtocol {
     
     var roomCreator: Bool
     var playerIdArray: MutableProperty<[String]>
@@ -31,48 +31,54 @@ struct MQTTRoomViewModel: MessageModelPropagateProtocol {
         playerIdArray = MutableProperty<[String]>([String]())
         nickname = NSUserDefaults.standardUserDefaults().objectForKey(Keys.Nickname) as? String
         (modelSignal, modelObserver) = Signal<String, NoError>.pipe()
-        mqttManager?.messageSignal.observeNext { next in
+        mqttManager?.messageSignal.observeNext { [weak self] next in
+            guard let weakSelf = self else {
+                return
+            }
             if (!(next.hasPrefix(MessageDefaults.CreateRoomMessage) || next.hasPrefix(MessageDefaults.KickRoomMessage) || next.hasPrefix(MessageDefaults.RoleAssignMessage) || next.hasPrefix(MessageDefaults.StartGameMessage))) {
                 if (next.rangeOfString(MessageDefaults.JoinRoomMessage) != nil) {
                     let clientId = next.componentsSeparatedByString(" with ID ")[1]
-                    self.playerIdArray.value.append(clientId)
+                    weakSelf.playerIdArray.value.append(clientId)
                 }
                 else if (next.rangeOfString(MessageDefaults.LeaveRoomMessage) != nil) {
                     let clientId = next.componentsSeparatedByString(" with ID ")[1]
-                    self.playerIdArray.value.removeAtIndex(self.playerIdArray.value.indexOf(clientId)!)
+                    weakSelf.playerIdArray.value.removeAtIndex(weakSelf.playerIdArray.value.indexOf(clientId)!)
                 }
-                self.modelObserver.sendNext(next)
+                weakSelf.modelObserver.sendNext(next)
             }
             else if (next.hasPrefix(MessageDefaults.KickRoomMessage)) {
-                self.mqttManager?.unsubscribe(self.createdOrJoinedTopic!)
-                self.modelObserver.sendInterrupted()
+                weakSelf.mqttManager?.unsubscribe(weakSelf.createdOrJoinedTopic!)
+                weakSelf.modelObserver.sendInterrupted()
             }
             else if (next.hasPrefix(MessageDefaults.RoleAssignMessage)) {
                 let messageClientID = next.componentsSeparatedByString(" - ")[1]
-                if (messageClientID == self.mqttManager?.clientIdPid) {
+                if (messageClientID == weakSelf.mqttManager?.clientIdPid) {
                     let messageTeam = next.componentsSeparatedByString(" - ")[2]
                     let messageRole = next.componentsSeparatedByString(" - ")[3]
                     if (messageTeam == "Red") {
-                        self.assignedTeam = Team.Red
+                        weakSelf.assignedTeam = Team.Red
                     }
                     else {
-                        self.assignedTeam = Team.Blue
+                        weakSelf.assignedTeam = Team.Blue
                     }
                     if (messageRole == "Describer") {
-                        self.assignedRole = Role.Describer
+                        weakSelf.assignedRole = Role.Describer
                     }
                     else {
-                        self.assignedRole = Role.Guesser
+                        weakSelf.assignedRole = Role.Guesser
                     }
                 }
             }
             else if (next.hasPrefix(MessageDefaults.StartGameMessage)) {
-                self.modelObserver.sendCompleted()
+                weakSelf.modelObserver.sendCompleted()
             }
         }
-        mqttManager?.subscribeSignal.observeNext { next in
+        mqttManager?.subscribeSignal.observeNext { [weak self] next in
+            guard let weakSelf = self else {
+                return
+            }
             if (next) {
-                self.mqttManager?.publish(self.createdOrJoinedTopic!, message: self.nickname! + " " + MessageDefaults.JoinRoomMessage + " with ID " + self.mqttManager!.clientIdPid)
+                weakSelf.mqttManager?.publish(weakSelf.createdOrJoinedTopic!, message: weakSelf.nickname! + " " + MessageDefaults.JoinRoomMessage + " with ID " + weakSelf.mqttManager!.clientIdPid)
             }
         }
         mqttManager?.subscribe(createdOrJoinedTopic!)
@@ -87,14 +93,14 @@ struct MQTTRoomViewModel: MessageModelPropagateProtocol {
             mqttManager?.publish(topic, message: "", retained: true)
         }
         else {
-            mqttManager?.publish(topic, message: name + " " + MessageDefaults.LeaveRoomMessage + " with ID " + self.mqttManager!.clientIdPid)
+            mqttManager?.publish(topic, message: name + " " + MessageDefaults.LeaveRoomMessage + " with ID " + mqttManager!.clientIdPid)
         }
         mqttManager?.unsubscribe(topic)
     }
     
     func startGame() {
-        let secondTeamIndex = (self.playerIdArray.value.count / 2)
-        for (index, playerID) in self.playerIdArray.value.enumerate() {
+        let secondTeamIndex = (playerIdArray.value.count / 2)
+        for (index, playerID) in playerIdArray.value.enumerate() {
             var team = "Red"
             var role = "Guesser"
             if (index == 0 || index == secondTeamIndex) {
@@ -104,9 +110,9 @@ struct MQTTRoomViewModel: MessageModelPropagateProtocol {
                 team = "Blue"
             }
             let message = MessageDefaults.RoleAssignMessage + " - " + playerID + " - " + team + " - " + role
-            self.mqttManager?.publish(self.createdOrJoinedTopic!, message: message)
+            mqttManager?.publish(createdOrJoinedTopic!, message: message)
         }
-        self.mqttManager?.publish(self.createdOrJoinedTopic!, message: MessageDefaults.StartGameMessage)
+        mqttManager?.publish(createdOrJoinedTopic!, message: MessageDefaults.StartGameMessage)
     }
     
     func roomName() -> String? {
@@ -114,7 +120,7 @@ struct MQTTRoomViewModel: MessageModelPropagateProtocol {
     }
     
     func gameRoomViewModel() -> MQTTGameRoomViewModel? {
-        return  MQTTGameRoomViewModel.init(topic: self.createdOrJoinedTopic, manager: self.mqttManager, randomTeam: self.assignedTeam!, randomRole: self.assignedRole!)
+        return  MQTTGameRoomViewModel.init(topic: self.createdOrJoinedTopic, manager: mqttManager, randomTeam: assignedTeam!, randomRole: assignedRole!)
     }
     
 }
