@@ -79,6 +79,10 @@ class MQTTGameRoomViewModel: MessageModelPropagateProtocol {
                 }
             }
             
+            if (next.hasPrefix(MessageDefaults.WinnerMessage)) {
+                weakSelf.mqttManager?.unsubscribe(weakSelf.gameTopic!)
+            }
+            
             if (next.hasPrefix(MessageDefaults.PointAddedMessage)) {
                 let teamText = next.componentsSeparatedByString(" to ")[1]
                 var currentTeam = Team.Red
