@@ -79,7 +79,12 @@ class MQTTGameRoomViewController: UIViewController, UIAlertViewDelegate {
                 return
             }
             if (next) {
-                weakSelf.buttonView.userInteractionEnabled = true
+                if (weakSelf.viewModel!.isDescriber()) {
+                    weakSelf.enableOrDisableWordButton(false)
+                }
+                else {
+                    weakSelf.enableOrDisableWordButton(true)
+                }
                 weakSelf.textField.enabled = true
                 weakSelf.slider.enabled = true
                 if (weakSelf.textField.text?.characters.count > 0) {
@@ -90,7 +95,7 @@ class MQTTGameRoomViewController: UIViewController, UIAlertViewDelegate {
                 }
             }
             else {
-                weakSelf.buttonView.userInteractionEnabled = false
+                weakSelf.enableOrDisableWordButton(false)
                 weakSelf.submitButton.enabled = false
                 weakSelf.textField.enabled = false
                 weakSelf.slider.enabled = false
@@ -152,10 +157,8 @@ class MQTTGameRoomViewController: UIViewController, UIAlertViewDelegate {
     }
     
     @IBAction func didTapWordButton(sender: AnyObject) {
-        if (!(self.viewModel!.isDescriber())) {
-            let button = sender as! UIButton
-            self.viewModel?.chooseWord(button.tag)
-        }
+        let button = sender as! UIButton
+        self.viewModel?.chooseWord(button.tag)
     }
     
     func keyboardWillShow(aNotification: NSNotification) {
@@ -167,6 +170,19 @@ class MQTTGameRoomViewController: UIViewController, UIAlertViewDelegate {
     func keyboardWillHide(aNotification: NSNotification) {
         let contentInsets = UIEdgeInsetsMake(self.scrollView.contentInset.top, 0.0, 0.0, 0.0)
         self.scrollView.contentInset = contentInsets;
+    }
+    
+    func enableOrDisableWordButton(willEnable: Bool) {
+        if (willEnable) {
+            for button in buttonArray! {
+                button.enabled = true
+            }
+        }
+        else {
+            for button in buttonArray! {
+                button.enabled = false
+            }
+        }
     }
     
     // Mark UIAlertViewDelegate

@@ -112,6 +112,7 @@ class MQTTRoomViewModel: MessageModelPropagateProtocol {
             let message = MessageDefaults.RoleAssignMessage + " - " + playerID + " - " + team + " - " + role
             mqttManager?.publish(createdOrJoinedTopic!, message: message)
         }
+        mqttManager?.publish(createdOrJoinedTopic!, message: "", retained: true)
         mqttManager?.publish(createdOrJoinedTopic!, message: MessageDefaults.StartGameMessage)
     }
     
